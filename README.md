@@ -11,6 +11,6 @@ The rubber tail illusion (RTI) is an experimental paradigm that investigates bod
 
 - 246 recorded videos of 288 total possible videos amounting to 24.32 GB
   - 63 asynchronous videos of 72 total possible videos (6.06 GB)
-	- 62 synchronous videos of 72 total possible videos (6.31 GB)
-	- 58 real tail videos of 72 total possible videos (5.42 GB)
-	- 63 fake tail videos of 72 total possible videos (6.53 GB)
+  - 62 synchronous videos of 72 total possible videos (6.31 GB)
+  - 58 real tail videos of 72 total possible videos (5.42 GB)
+  - 63 fake tail videos of 72 total possible videos (6.53 GB)
