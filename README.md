@@ -4,7 +4,7 @@ The rubber tail illusion (RTI) is an experimental paradigm that investigates bod
 
 ## Key words:
 multisensory integration; body boundary perception; rat; rubber tail illusion
-
+---
 ## References for poster
 Buckmaster, C. L., Rathmann-Bloch, J. E., Lecea, L. de, Schatzberg, A. F., & Lyons, D. M. (2020). Multisensory modulation of body ownership in mice. _Neuroscience of Consciousness_, _6_(1). https://doi.org/10/gm7qjq
 
@@ -15,7 +15,7 @@ Ernst, M. O., & Banks, M. S. (2002). Humans integrate visual and haptic informat
 Mackintosh, J. H., & Grant, E. C. (1963). A comparison of the social postures of some common laboratory rodents. _Behaviour_, _21_(3–4), 246–259. https://doi.org/10.1163/156853963x00185
 
 Wada, M., Takano, K., Ora, H., Ide, M., & Kansaku, K. (2016). The Rubber Tail Illusion as Evidence of Body Ownership in Mice. _The Journal of Neuroscience_, _36_(43), 11133–11137. https://doi.org/10/f9jd8z
-
+---
 ### General Information Regarding Data Collection
 - Experiment 1 (stroking: synchronous/asynchronous): 558 trials of 720 total possible trials
 - Experiment 2 (grasping: real tail/fake tail): 525 trials of 720 total trials
