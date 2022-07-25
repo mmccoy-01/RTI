@@ -33,4 +33,4 @@ Wada, M., Takano, K., Ora, H., Ide, M., & Kansaku, K. (2016). The Rubber Tail Il
 
 ---
 
-https://github.com/mmccoy-01/RTI/blob/3258f10c2cfdf4d25f2e6800b1c50ed3a56c637c/graphics/rti.4.21.2022.poster.pdf
+![image](https://user-images.githubusercontent.com/91561019/180830337-43cf3291-872f-45fd-93d8-eb4730dfddd7.png)
