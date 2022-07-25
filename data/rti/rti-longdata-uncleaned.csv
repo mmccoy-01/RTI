@@ -1,0 +1,1084 @@
+trial,day,condition,subject,sex,elongation
+asynch.day1.d1.trial1,1,Asynchronous,d1,Female,74.0143
+asynch.day1.d1.trial2,1,Asynchronous,d1,Female,73.213
+asynch.day1.d1.trial3,1,Asynchronous,d1,Female,73.7941
+asynch.day1.d1.trial4,1,Asynchronous,d1,Female,70.078
+asynch.day1.d1.trial5,1,Asynchronous,d1,Female,73.5046
+asynch.day1.d2.trial1,1,Asynchronous,d2,Female,70.9215
+asynch.day1.d2.trial2,1,Asynchronous,d2,Female,70.131
+asynch.day1.d2.trial3,1,Asynchronous,d2,Female,69.1089
+asynch.day1.d2.trial4,1,Asynchronous,d2,Female,70.7023
+asynch.day1.e2.trial1,1,Asynchronous,e2,Female,70.9669
+asynch.day1.e2.trial2,1,Asynchronous,e2,Female,73.3054
+asynch.day1.e2.trial3,1,Asynchronous,e2,Female,71.2198
+asynch.day1.e2.trial4,1,Asynchronous,e2,Female,73.7558
+asynch.day1.e2.trial5,1,Asynchronous,e2,Female,69.8512
+asynch.day1.g1.trial1,1,Asynchronous,g1,Male,66.6121
+asynch.day1.h1.trial1,1,Asynchronous,h1,Male,71.7377
+asynch.day1.h1.trial2,1,Asynchronous,h1,Male,71.6596
+asynch.day1.h1.trial3,1,Asynchronous,h1,Male,72.8427
+asynch.day1.h1.trial4,1,Asynchronous,h1,Male,72.1984
+asynch.day1.h1.trial5,1,Asynchronous,h1,Male,72.0321
+asynch.day1.j1.trial1,1,Asynchronous,j1,Male,70.3781
+asynch.day1.j1.trial2,1,Asynchronous,j1,Male,69.8005
+asynch.day2.d1.trial1,2,Asynchronous,d1,Female,73.4573
+asynch.day2.d1.trial2,2,Asynchronous,d1,Female,74.0579
+asynch.day2.d1.trial3,2,Asynchronous,d1,Female,74.2677
+asynch.day2.d1.trial4,2,Asynchronous,d1,Female,73.8246
+asynch.day2.d1.trial5,2,Asynchronous,d1,Female,73.7757
+asynch.day2.d2.trial1,2,Asynchronous,d2,Female,75.7285
+asynch.day2.d2.trial2,2,Asynchronous,d2,Female,74.2614
+asynch.day2.d2.trial3,2,Asynchronous,d2,Female,74.0964
+asynch.day2.d2.trial4,2,Asynchronous,d2,Female,76.5373
+asynch.day2.d2.trial5,2,Asynchronous,d2,Female,74.5798
+asynch.day2.e2.trial1,2,Asynchronous,e2,Female,72.7974
+asynch.day2.e2.trial2,2,Asynchronous,e2,Female,73.638
+asynch.day2.e2.trial3,2,Asynchronous,e2,Female,73.0249
+asynch.day2.e2.trial4,2,Asynchronous,e2,Female,73.0207
+asynch.day2.e2.trial5,2,Asynchronous,e2,Female,73.4864
+asynch.day2.g1.trial1,2,Asynchronous,g1,Male,74.8685
+asynch.day2.g1.trial2,2,Asynchronous,g1,Male,74.991
+asynch.day2.h1.trial1,2,Asynchronous,h1,Male,67.2116
+asynch.day2.h1.trial2,2,Asynchronous,h1,Male,71.975
+asynch.day2.h1.trial3,2,Asynchronous,h1,Male,69.2457
+asynch.day2.h1.trial4,2,Asynchronous,h1,Male,70.0266
+asynch.day2.h1.trial5,2,Asynchronous,h1,Male,74.8529
+asynch.day2.j1.trial1,2,Asynchronous,j1,Male,72.3589
+asynch.day3.d1.trial1,3,Asynchronous,d1,Female,66.8465
+asynch.day3.d1.trial2,3,Asynchronous,d1,Female,75.4304
+asynch.day3.d1.trial3,3,Asynchronous,d1,Female,76.1074
+asynch.day3.d1.trial4,3,Asynchronous,d1,Female,73.1601
+asynch.day3.d1.trial5,3,Asynchronous,d1,Female,72.2237
+asynch.day3.e2.trial1,3,Asynchronous,e2,Female,69.8626
+asynch.day3.e2.trial2,3,Asynchronous,e2,Female,68.1727
+asynch.day3.e2.trial3,3,Asynchronous,e2,Female,72.9184
+asynch.day3.e2.trial4,3,Asynchronous,e2,Female,74.2487
+asynch.day3.e2.trial5,3,Asynchronous,e2,Female,68.6749
+asynch.day3.h1.trial1,3,Asynchronous,h1,Male,72.0091
+asynch.day3.h1.trial2,3,Asynchronous,h1,Male,71.012
+asynch.day3.h1.trial3,3,Asynchronous,h1,Male,72.9508
+asynch.day3.h1.trial4,3,Asynchronous,h1,Male,76.8135
+asynch.day3.h1.trial5,3,Asynchronous,h1,Male,71.3879
+asynch.day4.d1.trial1,4,Asynchronous,d1,Female,75.061
+asynch.day4.d1.trial2,4,Asynchronous,d1,Female,71.2668
+asynch.day4.d1.trial3,4,Asynchronous,d1,Female,72.2435
+asynch.day4.d1.trial4,4,Asynchronous,d1,Female,71.1025
+asynch.day4.d1.trial5,4,Asynchronous,d1,Female,74.3348
+asynch.day4.e2.trial1,4,Asynchronous,e2,Female,78.7162
+asynch.day4.e2.trial2,4,Asynchronous,e2,Female,77.6193
+asynch.day4.e2.trial3,4,Asynchronous,e2,Female,78.2526
+asynch.day4.e2.trial4,4,Asynchronous,e2,Female,78.6077
+asynch.day4.e2.trial5,4,Asynchronous,e2,Female,78.1059
+asynch.day4.d2.trial1,4,Asynchronous,d2,Female,76.253
+asynch.day4.d2.trial2,4,Asynchronous,d2,Female,75.5205
+asynch.day4.d2.trial3,4,Asynchronous,d2,Female,73.7329
+asynch.day4.d2.trial4,4,Asynchronous,d2,Female,71.9693
+asynch.day4.d2.trial5,4,Asynchronous,d2,Female,74.8483
+asynch.day4.g1.trial1,4,Asynchronous,g1,Male,69.6575
+asynch.day4.g1.trial2,4,Asynchronous,g1,Male,70.354
+asynch.day4.g1.trial3,4,Asynchronous,g1,Male,69.2267
+asynch.day4.h1.trial1,4,Asynchronous,h1,Male,66.75
+asynch.day4.h1.trial2,4,Asynchronous,h1,Male,67.3137
+asynch.day4.h1.trial3,4,Asynchronous,h1,Male,68.2954
+asynch.day4.h1.trial4,4,Asynchronous,h1,Male,67.2835
+asynch.day4.h1.trial5,4,Asynchronous,h1,Male,68.1911
+asynch.day4.j1.trial1,4,Asynchronous,j1,Male,76.4408
+asynch.day5.d1.trial1,5,Asynchronous,d1,Female,76.3677
+asynch.day5.d1.trial2,5,Asynchronous,d1,Female,76.1167
+asynch.day5.d1.trial3,5,Asynchronous,d1,Female,76.7847
+asynch.day5.d1.trial4,5,Asynchronous,d1,Female,76.1661
+asynch.day5.d1.trial5,5,Asynchronous,d1,Female,75.8161
+asynch.day5.e2.trial1,5,Asynchronous,e2,Female,78.462
+asynch.day5.e2.trial2,5,Asynchronous,e2,Female,74.7916
+asynch.day5.e2.trial3,5,Asynchronous,e2,Female,77.4197
+asynch.day5.e2.trial4,5,Asynchronous,e2,Female,75.9824
+asynch.day5.e2.trial5,5,Asynchronous,e2,Female,76.8127
+asynch.day5.h1.trial1,5,Asynchronous,h1,Male,68.7725
+asynch.day5.h1.trial2,5,Asynchronous,h1,Male,75.4297
+asynch.day5.h1.trial3,5,Asynchronous,h1,Male,71.0183
+asynch.day5.h1.trial4,5,Asynchronous,h1,Male,76.1595
+asynch.day5.h1.trial5,5,Asynchronous,h1,Male,76.7367
+asynch.day6.d1.trial1,6,Asynchronous,d1,Female,73.5603
+asynch.day6.d1.trial2,6,Asynchronous,d1,Female,74.0134
+asynch.day6.d1.trial3,6,Asynchronous,d1,Female,74.0602
+asynch.day6.d1.trial4,6,Asynchronous,d1,Female,74.0528
+asynch.day6.d1.trial5,6,Asynchronous,d1,Female,73.4059
+asynch.day6.e2.trial1,6,Asynchronous,e2,Female,76.3217
+asynch.day6.e2.trial2,6,Asynchronous,e2,Female,77.0633
+asynch.day6.e2.trial3,6,Asynchronous,e2,Female,72.4652
+asynch.day6.e2.trial4,6,Asynchronous,e2,Female,75.5467
+asynch.day6.e2.trial5,6,Asynchronous,e2,Female,74.7395
+asynch.day6.h1.trial1,6,Asynchronous,h1,Male,66.4934
+asynch.day6.h1.trial2,6,Asynchronous,h1,Male,66.0443
+asynch.day6.h1.trial3,6,Asynchronous,h1,Male,69.756
+asynch.day6.h1.trial4,6,Asynchronous,h1,Male,63.8436
+asynch.day6.h1.trial5,6,Asynchronous,h1,Male,66.1714
+asynch.day6.j1.trial1,6,Asynchronous,j1,Male,69.9947
+asynch.day6.j1.trial2,6,Asynchronous,j1,Male,67.6918
+asynch.day7.a2.trial1,7,Asynchronous,a2,Female,74.8534
+asynch.day7.a2.trial2,7,Asynchronous,a2,Female,76.3837
+asynch.day7.a2.trial3,7,Asynchronous,a2,Female,76.6142
+asynch.day7.a2.trial4,7,Asynchronous,a2,Female,74.8676
+asynch.day7.a2.trial5,7,Asynchronous,a2,Female,74.9749
+asynch.day7.c2.trial1,7,Asynchronous,c2,Female,74.8419
+asynch.day7.c2.trial2,7,Asynchronous,c2,Female,75.349
+asynch.day7.c2.trial3,7,Asynchronous,c2,Female,74.3659
+asynch.day7.c2.trial4,7,Asynchronous,c2,Female,74.7746
+asynch.day7.c2.trial5,7,Asynchronous,c2,Female,74.4956
+asynch.day7.f1.trial1,7,Asynchronous,f1,Female,74.2663
+asynch.day7.f1.trial2,7,Asynchronous,f1,Female,75.1399
+asynch.day7.f1.trial3,7,Asynchronous,f1,Female,74.9275
+asynch.day7.f1.trial4,7,Asynchronous,f1,Female,74.4208
+asynch.day7.f1.trial5,7,Asynchronous,f1,Female,75.0898
+asynch.day7.g2.trial1,7,Asynchronous,g2,Male,70.2519
+asynch.day7.k1.trial1,7,Asynchronous,k1,Male,70.4861
+asynch.day7.k1.trial2,7,Asynchronous,k1,Male,69.7083
+asynch.day7.k1.trial3,7,Asynchronous,k1,Male,70.8717
+asynch.day7.k1.trial4,7,Asynchronous,k1,Male,70.105
+asynch.day7.k1.trial5,7,Asynchronous,k1,Male,70.4813
+asynch.day7.l2.trial1,7,Asynchronous,l2,Male,69.3042
+asynch.day7.l2.trial2,7,Asynchronous,l2,Male,65.0511
+asynch.day7.l2.trial3,7,Asynchronous,l2,Male,66.8344
+asynch.day7.l2.trial4,7,Asynchronous,l2,Male,65.9363
+asynch.day7.l2.trial5,7,Asynchronous,l2,Male,66.0528
+asynch.day8.a2.trial1,8,Asynchronous,a2,Female,75.2556
+asynch.day8.a2.trial2,8,Asynchronous,a2,Female,72.1568
+asynch.day8.a2.trial3,8,Asynchronous,a2,Female,72.1218
+asynch.day8.a2.trial4,8,Asynchronous,a2,Female,71.3488
+asynch.day8.a2.trial5,8,Asynchronous,a2,Female,72.0685
+asynch.day8.c2.trial1,8,Asynchronous,c2,Female,69.5997
+asynch.day8.c2.trial2,8,Asynchronous,c2,Female,72.5589
+asynch.day8.c2.trial3,8,Asynchronous,c2,Female,70.9244
+asynch.day8.c2.trial4,8,Asynchronous,c2,Female,70.98
+asynch.day8.c2.trial5,8,Asynchronous,c2,Female,72.3464
+asynch.day8.f1.trial1,8,Asynchronous,f1,Female,65.7907
+asynch.day8.f1.trial2,8,Asynchronous,f1,Female,66.2464
+asynch.day8.f1.trial3,8,Asynchronous,f1,Female,67.72
+asynch.day8.f1.trial4,8,Asynchronous,f1,Female,67.7949
+asynch.day8.f1.trial5,8,Asynchronous,f1,Female,70.3868
+asynch.day8.k1.trial1,8,Asynchronous,k1,Male,77.1167
+asynch.day8.k1.trial2,8,Asynchronous,k1,Male,77.3677
+asynch.day8.k1.trial3,8,Asynchronous,k1,Male,76.8751
+asynch.day8.k1.trial4,8,Asynchronous,k1,Male,75.6048
+asynch.day8.k1.trial5,8,Asynchronous,k1,Male,74.9117
+asynch.day8.l2.trial1,8,Asynchronous,l2,Male,75.8671
+asynch.day8.l2.trial2,8,Asynchronous,l2,Male,78.3655
+asynch.day8.l2.trial3,8,Asynchronous,l2,Male,77.0602
+asynch.day8.l2.trial4,8,Asynchronous,l2,Male,74.1968
+asynch.day8.l2.trial5,8,Asynchronous,l2,Male,79.8975
+asynch.day9.a2.trial1,9,Asynchronous,a2,Female,73.6122
+asynch.day9.a2.trial2,9,Asynchronous,a2,Female,73.6914
+asynch.day9.a2.trial3,9,Asynchronous,a2,Female,72.893
+asynch.day9.a2.trial4,9,Asynchronous,a2,Female,73.0312
+asynch.day9.a2.trial5,9,Asynchronous,a2,Female,74.6659
+asynch.day9.c2.trial1,9,Asynchronous,c2,Female,75.794
+asynch.day9.c2.trial2,9,Asynchronous,c2,Female,76.5851
+asynch.day9.c2.trial3,9,Asynchronous,c2,Female,76.9554
+asynch.day9.c2.trial4,9,Asynchronous,c2,Female,77.0386
+asynch.day9.c2.trial5,9,Asynchronous,c2,Female,75.9284
+asynch.day9.f1.trial1,9,Asynchronous,f1,Female,72.0182
+asynch.day9.f1.trial2,9,Asynchronous,f1,Female,74.0111
+asynch.day9.f1.trial3,9,Asynchronous,f1,Female,74.2659
+asynch.day9.f1.trial4,9,Asynchronous,f1,Female,75.349
+asynch.day9.f1.trial5,9,Asynchronous,f1,Female,68.2933
+asynch.day9.g2.trial1,9,Asynchronous,g2,Male,77.8673
+asynch.day9.k1.trial1,9,Asynchronous,k1,Male,80.0634
+asynch.day9.k1.trial2,9,Asynchronous,k1,Male,79.2733
+asynch.day9.k1.trial3,9,Asynchronous,k1,Male,81.2803
+asynch.day9.k1.trial4,9,Asynchronous,k1,Male,78.0656
+asynch.day9.k1.trial5,9,Asynchronous,k1,Male,77.6778
+asynch.day9.l2.trial1,9,Asynchronous,l2,Male,77.06
+asynch.day9.l2.trial2,9,Asynchronous,l2,Male,73.0747
+asynch.day9.l2.trial3,9,Asynchronous,l2,Male,76.0679
+asynch.day9.l2.trial4,9,Asynchronous,l2,Male,76.1868
+asynch.day9.l2.trial5,9,Asynchronous,l2,Male,72.9129
+asynch.day10.a2.trial1,10,Asynchronous,a2,Female,77.1992
+asynch.day10.a2.trial2,10,Asynchronous,a2,Female,76.5988
+asynch.day10.a2.trial3,10,Asynchronous,a2,Female,76.3326
+asynch.day10.a2.trial4,10,Asynchronous,a2,Female,76.5067
+asynch.day10.a2.trial5,10,Asynchronous,a2,Female,76.1336
+asynch.day10.c2.trial1,10,Asynchronous,c2,Female,75.3935
+asynch.day10.c2.trial2,10,Asynchronous,c2,Female,75.8269
+asynch.day10.c2.trial3,10,Asynchronous,c2,Female,75.895
+asynch.day10.c2.trial4,10,Asynchronous,c2,Female,75.627
+asynch.day10.c2.trial5,10,Asynchronous,c2,Female,74.4688
+asynch.day10.f1.trial1,10,Asynchronous,f1,Female,66.964
+asynch.day10.f1.trial2,10,Asynchronous,f1,Female,70.2632
+asynch.day10.f1.trial3,10,Asynchronous,f1,Female,67.787
+asynch.day10.g2.trial1,10,Asynchronous,g2,Male,78.6949
+asynch.day10.k1.trial1,10,Asynchronous,k1,Male,76.1981
+asynch.day10.k1.trial2,10,Asynchronous,k1,Male,76.1973
+asynch.day10.k1.trial3,10,Asynchronous,k1,Male,76.8041
+asynch.day10.k1.trial4,10,Asynchronous,k1,Male,75.9814
+asynch.day10.k1.trial5,10,Asynchronous,k1,Male,78.9306
+asynch.day10.l2.trial1,10,Asynchronous,l2,Male,80.4162
+asynch.day10.l2.trial2,10,Asynchronous,l2,Male,80.8625
+asynch.day10.l2.trial3,10,Asynchronous,l2,Male,82.8612
+asynch.day10.l2.trial4,10,Asynchronous,l2,Male,82.3655
+asynch.day10.l2.trial5,10,Asynchronous,l2,Male,80.433
+asynch.day11.a2.trial1,11,Asynchronous,a2,Female,77.0272
+asynch.day11.a2.trial2,11,Asynchronous,a2,Female,76.9089
+asynch.day11.a2.trial3,11,Asynchronous,a2,Female,78.4865
+asynch.day11.a2.trial4,11,Asynchronous,a2,Female,77.3437
+asynch.day11.a2.trial5,11,Asynchronous,a2,Female,77.0395
+asynch.day11.c2.trial1,11,Asynchronous,c2,Female,73.8725
+asynch.day11.c2.trial2,11,Asynchronous,c2,Female,76.0512
+asynch.day11.c2.trial3,11,Asynchronous,c2,Female,73.4929
+asynch.day11.c2.trial4,11,Asynchronous,c2,Female,76.5246
+asynch.day11.c2.trial5,11,Asynchronous,c2,Female,74.902
+asynch.day11.f1.trial1,11,Asynchronous,f1,Female,71.5928
+asynch.day11.f1.trial2,11,Asynchronous,f1,Female,72.937
+asynch.day11.f1.trial3,11,Asynchronous,f1,Female,69.7927
+asynch.day11.f1.trial4,11,Asynchronous,f1,Female,72.2228
+asynch.day11.f1.trial5,11,Asynchronous,f1,Female,69.6255
+asynch.day11.g2.trial1,11,Asynchronous,g2,Male,78.0371
+asynch.day11.g2.trial2,11,Asynchronous,g2,Male,75.02
+asynch.day11.k1.trial1,11,Asynchronous,k1,Male,78.0818
+asynch.day11.k1.trial2,11,Asynchronous,k1,Male,78.2514
+asynch.day11.k1.trial3,11,Asynchronous,k1,Male,73.2677
+asynch.day11.k1.trial4,11,Asynchronous,k1,Male,72.2681
+asynch.day11.k1.trial5,11,Asynchronous,k1,Male,75.0862
+asynch.day11.l2.trial1,11,Asynchronous,l2,Male,79.9971
+asynch.day11.l2.trial2,11,Asynchronous,l2,Male,80.6537
+asynch.day11.l2.trial3,11,Asynchronous,l2,Male,78.51
+asynch.day11.l2.trial4,11,Asynchronous,l2,Male,75.5531
+asynch.day11.l2.trial5,11,Asynchronous,l2,Male,78.9387
+asynch.day12.a2.trial1,12,Asynchronous,a2,Female,76.1075
+asynch.day12.a2.trial2,12,Asynchronous,a2,Female,75.3122
+asynch.day12.a2.trial3,12,Asynchronous,a2,Female,75.6183
+asynch.day12.a2.trial4,12,Asynchronous,a2,Female,75.9967
+asynch.day12.a2.trial5,12,Asynchronous,a2,Female,74.8744
+asynch.day12.c2.trial1,12,Asynchronous,c2,Female,76.507
+asynch.day12.c2.trial2,12,Asynchronous,c2,Female,75.0528
+asynch.day12.c2.trial3,12,Asynchronous,c2,Female,74.249
+asynch.day12.c2.trial4,12,Asynchronous,c2,Female,73.8463
+asynch.day12.c2.trial5,12,Asynchronous,c2,Female,73.695
+asynch.day12.f1.trial1,12,Asynchronous,f1,Female,71.6939
+asynch.day12.f1.trial2,12,Asynchronous,f1,Female,71.7159
+asynch.day12.f1.trial3,12,Asynchronous,f1,Female,72.0893
+asynch.day12.f1.trial4,12,Asynchronous,f1,Female,71.1688
+asynch.day12.f1.trial5,12,Asynchronous,f1,Female,69.2542
+asynch.day12.g2.trial1,12,Asynchronous,g2,Male,78.1379
+asynch.day12.g2.trial2,12,Asynchronous,g2,Male,76.7267
+asynch.day12.k1.trial1,12,Asynchronous,k1,Male,76.2756
+asynch.day12.k1.trial2,12,Asynchronous,k1,Male,77.1386
+asynch.day12.k1.trial3,12,Asynchronous,k1,Male,74.5391
+asynch.day12.k1.trial4,12,Asynchronous,k1,Male,76.1556
+asynch.day12.k1.trial5,12,Asynchronous,k1,Male,73.5572
+asynch.day12.l2.trial1,12,Asynchronous,l2,Male,77.7113
+asynch.day12.l2.trial2,12,Asynchronous,l2,Male,77.2835
+asynch.day12.l2.trial3,12,Asynchronous,l2,Male,77.5396
+asynch.day12.l2.trial4,12,Asynchronous,l2,Male,76.6772
+asynch.day12.l2.trial5,12,Asynchronous,l2,Male,78.8175
+synch.day1.a1.trial1,1,Synchronous,a1,Female,73.3474
+synch.day1.a1.trial2,1,Synchronous,a1,Female,75.5337
+synch.day1.a1.trial3,1,Synchronous,a1,Female,73.497
+synch.day1.a1.trial4,1,Synchronous,a1,Female,76.8172
+synch.day1.b2.trial1,1,Synchronous,b2,Female,77.8464
+synch.day1.f2.trial1,1,Synchronous,f2,Female,74.1475
+synch.day1.f2.trial2,1,Synchronous,f2,Female,73.2414
+synch.day1.f2.trial3,1,Synchronous,f2,Female,74.9734
+synch.day1.f2.trial4,1,Synchronous,f2,Female,74.3369
+synch.day1.f2.trial5,1,Synchronous,f2,Female,74.262
+synch.day1.h2.trial1,1,Synchronous,h2,Male,71.6317
+synch.day1.h2.trial2,1,Synchronous,h2,Male,71.48
+synch.day1.h2.trial3,1,Synchronous,h2,Male,71.2364
+synch.day1.h2.trial4,1,Synchronous,h2,Male,68.6354
+synch.day1.h2.trial5,1,Synchronous,h2,Male,70.2824
+synch.day2.a1.trial1,2,Synchronous,a1,Female,74.7545
+synch.day2.a1.trial2,2,Synchronous,a1,Female,74.9143
+synch.day2.a1.trial3,2,Synchronous,a1,Female,76.2534
+synch.day2.a1.trial4,2,Synchronous,a1,Female,75.741
+synch.day2.a1.trial5,2,Synchronous,a1,Female,75.4355
+synch.day2.b2.trial1,2,Synchronous,b2,Female,73.8683
+synch.day2.b2.trial2,2,Synchronous,b2,Female,73.4727
+synch.day2.b2.trial3,2,Synchronous,b2,Female,73.7033
+synch.day2.b2.trial4,2,Synchronous,b2,Female,75.3119
+synch.day2.b2.trial5,2,Synchronous,b2,Female,72.8325
+synch.day2.f2.trial1,2,Synchronous,f2,Female,80.6039
+synch.day2.f2.trial2,2,Synchronous,f2,Female,78.7769
+synch.day2.f2.trial3,2,Synchronous,f2,Female,79.5895
+synch.day2.f2.trial4,2,Synchronous,f2,Female,79.544
+synch.day2.f2.trial5,2,Synchronous,f2,Female,78.6596
+synch.day2.h2.trial1,2,Synchronous,h2,Male,57.9833
+synch.day2.h2.trial2,2,Synchronous,h2,Male,68.8934
+synch.day2.h2.trial3,2,Synchronous,h2,Male,66.957
+synch.day2.h2.trial4,2,Synchronous,h2,Male,67.315
+synch.day2.h2.trial5,2,Synchronous,h2,Male,67.1105
+synch.day2.l1.trial1,2,Synchronous,l1,Male,70.6517
+synch.day2.l1.trial2,2,Synchronous,l1,Male,71.1117
+synch.day3.a1.trial1,3,Synchronous,a1,Female,78.2017
+synch.day3.a1.trial2,3,Synchronous,a1,Female,77.099
+synch.day3.a1.trial3,3,Synchronous,a1,Female,78.0316
+synch.day3.a1.trial4,3,Synchronous,a1,Female,77.734
+synch.day3.a1.trial5,3,Synchronous,a1,Female,77.5721
+synch.day3.b2.trial1,3,Synchronous,b2,Female,74.4246
+synch.day3.b2.trial2,3,Synchronous,b2,Female,77.8471
+synch.day3.b2.trial3,3,Synchronous,b2,Female,77.2164
+synch.day3.b2.trial4,3,Synchronous,b2,Female,73.6037
+synch.day3.b2.trial5,3,Synchronous,b2,Female,74.9388
+synch.day3.f2.trial1,3,Synchronous,f2,Female,74.9913
+synch.day3.f2.trial2,3,Synchronous,f2,Female,75.8009
+synch.day3.f2.trial3,3,Synchronous,f2,Female,75.6345
+synch.day3.f2.trial4,3,Synchronous,f2,Female,77.4216
+synch.day3.f2.trial5,3,Synchronous,f2,Female,77.7073
+synch.day3.h2.trial1,3,Synchronous,h2,Male,68.3963
+synch.day3.h2.trial2,3,Synchronous,h2,Male,67.996
+synch.day3.h2.trial3,3,Synchronous,h2,Male,69.3518
+synch.day3.h2.trial4,3,Synchronous,h2,Male,68.4802
+synch.day3.h2.trial5,3,Synchronous,h2,Male,67.3039
+synch.day3.l1.trial1,3,Synchronous,l1,Male,75.4677
+synch.day4.a1.trial1,4,Synchronous,a1,Female,78.462
+synch.day4.a1.trial2,4,Synchronous,a1,Female,77.8769
+synch.day4.a1.trial3,4,Synchronous,a1,Female,78.4612
+synch.day4.a1.trial4,4,Synchronous,a1,Female,79.1463
+synch.day4.a1.trial5,4,Synchronous,a1,Female,78.323
+synch.day4.b2.trial1,4,Synchronous,b2,Female,79.2372
+synch.day4.b2.trial2,4,Synchronous,b2,Female,74.9819
+synch.day4.b2.trial3,4,Synchronous,b2,Female,75.8881
+synch.day4.b2.trial4,4,Synchronous,b2,Female,78.0487
+synch.day4.b2.trial5,4,Synchronous,b2,Female,76.1417
+synch.day4.f2.trial1,4,Synchronous,f2,Female,77.2439
+synch.day4.f2.trial2,4,Synchronous,f2,Female,77.2252
+synch.day4.f2.trial3,4,Synchronous,f2,Female,77.2906
+synch.day4.f2.trial4,4,Synchronous,f2,Female,78.5058
+synch.day4.f2.trial5,4,Synchronous,f2,Female,77.7575
+synch.day4.l1.trial1,4,Synchronous,l1,Male,70.6505
+synch.day4.l1.trial2,4,Synchronous,l1,Male,66.8327
+synch.day5.a1.trial1,5,Synchronous,a1,Female,75.3893
+synch.day5.a1.trial2,5,Synchronous,a1,Female,74.2511
+synch.day5.a1.trial3,5,Synchronous,a1,Female,74.9347
+synch.day5.a1.trial4,5,Synchronous,a1,Female,73.7032
+synch.day5.a1.trial5,5,Synchronous,a1,Female,74.6896
+synch.day5.b2.trial1,5,Synchronous,b2,Female,73.0284
+synch.day5.b2.trial2,5,Synchronous,b2,Female,72.7965
+synch.day5.b2.trial3,5,Synchronous,b2,Female,77.3393
+synch.day5.b2.trial4,5,Synchronous,b2,Female,76.851
+synch.day5.b2.trial5,5,Synchronous,b2,Female,74.147
+synch.day5.f2.trial1,5,Synchronous,f2,Female,74.0599
+synch.day5.f2.trial2,5,Synchronous,f2,Female,72.6726
+synch.day5.f2.trial3,5,Synchronous,f2,Female,74.0718
+synch.day5.f2.trial4,5,Synchronous,f2,Female,73.9942
+synch.day5.f2.trial5,5,Synchronous,f2,Female,74.5755
+synch.day6.a1.trial1,6,Synchronous,a1,Female,70.5659
+synch.day6.a1.trial2,6,Synchronous,a1,Female,70.9696
+synch.day6.a1.trial3,6,Synchronous,a1,Female,71.0144
+synch.day6.a1.trial4,6,Synchronous,a1,Female,73.0077
+synch.day6.a1.trial5,6,Synchronous,a1,Female,72.2305
+synch.day6.b2.trial1,6,Synchronous,b2,Female,70.4068
+synch.day6.b2.trial2,6,Synchronous,b2,Female,70.2967
+synch.day6.b2.trial3,6,Synchronous,b2,Female,67.597
+synch.day6.b2.trial4,6,Synchronous,b2,Female,70.2829
+synch.day6.b2.trial5,6,Synchronous,b2,Female,69.7205
+synch.day6.f2.trial1,6,Synchronous,f2,Female,76.129
+synch.day6.f2.trial2,6,Synchronous,f2,Female,76.7891
+synch.day6.f2.trial3,6,Synchronous,f2,Female,76.8803
+synch.day6.f2.trial4,6,Synchronous,f2,Female,76.7743
+synch.day6.f2.trial5,6,Synchronous,f2,Female,77.0081
+synch.day6.k2.trial1,6,Synchronous,k2,Male,78.0435
+synch.day6.l1.trial1,6,Synchronous,l1,Male,69.1798
+synch.day7.b1.trial1,7,Synchronous,b1,Female,75.4884
+synch.day7.b1.trial2,7,Synchronous,b1,Female,74.5963
+synch.day7.b1.trial3,7,Synchronous,b1,Female,75.1148
+synch.day7.b1.trial4,7,Synchronous,b1,Female,75.3874
+synch.day7.b1.trial5,7,Synchronous,b1,Female,75.4336
+synch.day7.c1.trial1,7,Synchronous,c1,Female,71.5575
+synch.day7.c1.trial2,7,Synchronous,c1,Female,70.6908
+synch.day7.c1.trial3,7,Synchronous,c1,Female,74.7088
+synch.day7.c1.trial4,7,Synchronous,c1,Female,71.7933
+synch.day7.c1.trial5,7,Synchronous,c1,Female,71.1319
+synch.day7.e1.trial1,7,Synchronous,e1,Female,76.287
+synch.day7.e1.trial2,7,Synchronous,e1,Female,74.4571
+synch.day7.e1.trial3,7,Synchronous,e1,Female,76.5017
+synch.day7.e1.trial4,7,Synchronous,e1,Female,74.6064
+synch.day7.e1.trial5,7,Synchronous,e1,Female,75.8614
+synch.day7.i1.trial1,7,Synchronous,i1,Male,78.4317
+synch.day7.i1.trial2,7,Synchronous,i1,Male,75.143
+synch.day7.i1.trial3,7,Synchronous,i1,Male,75.9558
+synch.day7.i1.trial4,7,Synchronous,i1,Male,74.5817
+synch.day7.i1.trial5,7,Synchronous,i1,Male,75.0395
+synch.day7.i2.trial1,7,Synchronous,i2,Male,75.3271
+synch.day7.i2.trial2,7,Synchronous,i2,Male,77.414
+synch.day7.i2.trial3,7,Synchronous,i2,Male,71.7894
+synch.day7.i2.trial4,7,Synchronous,i2,Male,76.8238
+synch.day7.i2.trial5,7,Synchronous,i2,Male,78.9569
+synch.day7.j2.trial1,7,Synchronous,j2,Male,69.1818
+synch.day7.j2.trial2,7,Synchronous,j2,Male,69.2959
+synch.day7.j2.trial3,7,Synchronous,j2,Male,67.9973
+synch.day7.j2.trial4,7,Synchronous,j2,Male,67.6244
+synch.day7.j2.trial5,7,Synchronous,j2,Male,70.7864
+synch.day8.b1.trial1,8,Synchronous,b1,Female,74.9749
+synch.day8.b1.trial2,8,Synchronous,b1,Female,74.8158
+synch.day8.b1.trial3,8,Synchronous,b1,Female,73.1656
+synch.day8.b1.trial4,8,Synchronous,b1,Female,68.902
+synch.day8.b1.trial5,8,Synchronous,b1,Female,68.9493
+synch.day8.c1.trial1,8,Synchronous,c1,Female,72.5482
+synch.day8.c1.trial2,8,Synchronous,c1,Female,71.7359
+synch.day8.c1.trial3,8,Synchronous,c1,Female,73.4644
+synch.day8.c1.trial4,8,Synchronous,c1,Female,71.4258
+synch.day8.c1.trial5,8,Synchronous,c1,Female,71.5802
+synch.day8.e1.trial1,8,Synchronous,e1,Female,73.1546
+synch.day8.e1.trial2,8,Synchronous,e1,Female,70.1765
+synch.day8.e1.trial3,8,Synchronous,e1,Female,71.7658
+synch.day8.e1.trial4,8,Synchronous,e1,Female,70.9869
+synch.day8.e1.trial5,8,Synchronous,e1,Female,70.6605
+synch.day8.i1.trial1,8,Synchronous,i1,Male,74.3907
+synch.day8.i1.trial2,8,Synchronous,i1,Male,75.2308
+synch.day8.i1.trial3,8,Synchronous,i1,Male,74.732
+synch.day8.i1.trial4,8,Synchronous,i1,Male,73.9452
+synch.day8.i1.trial5,8,Synchronous,i1,Male,74.1407
+synch.day8.i2.trial1,8,Synchronous,i2,Male,76.5427
+synch.day8.i2.trial2,8,Synchronous,i2,Male,77.9907
+synch.day8.i2.trial3,8,Synchronous,i2,Male,78.8203
+synch.day8.i2.trial4,8,Synchronous,i2,Male,78.6258
+synch.day8.i2.trial5,8,Synchronous,i2,Male,77.3051
+synch.day8.j2.trial1,8,Synchronous,j2,Male,78.4028
+synch.day8.j2.trial2,8,Synchronous,j2,Male,78.1484
+synch.day8.j2.trial3,8,Synchronous,j2,Male,79.0149
+synch.day8.j2.trial4,8,Synchronous,j2,Male,77.8893
+synch.day8.j2.trial5,8,Synchronous,j2,Male,76.3699
+synch.day9.b1.trial1,9,Synchronous,b1,Female,73.331
+synch.day9.b1.trial2,9,Synchronous,b1,Female,74.9755
+synch.day9.b1.trial3,9,Synchronous,b1,Female,75.1361
+synch.day9.b1.trial4,9,Synchronous,b1,Female,74.7388
+synch.day9.b1.trial5,9,Synchronous,b1,Female,74.6139
+synch.day9.c1.trial1,9,Synchronous,c1,Female,75.7162
+synch.day9.c1.trial2,9,Synchronous,c1,Female,75.6129
+synch.day9.c1.trial3,9,Synchronous,c1,Female,75.4684
+synch.day9.c1.trial4,9,Synchronous,c1,Female,75.9077
+synch.day9.c1.trial5,9,Synchronous,c1,Female,76.3041
+synch.day9.e1.trial1,9,Synchronous,e1,Female,74.4047
+synch.day9.e1.trial2,9,Synchronous,e1,Female,73.7994
+synch.day9.e1.trial3,9,Synchronous,e1,Female,72.0488
+synch.day9.e1.trial4,9,Synchronous,e1,Female,72.9029
+synch.day9.e1.trial5,9,Synchronous,e1,Female,74.2958
+synch.day9.i1.trial1,9,Synchronous,i1,Male,75.804
+synch.day9.i1.trial2,9,Synchronous,i1,Male,76.103
+synch.day9.i1.trial3,9,Synchronous,i1,Male,75.5898
+synch.day9.i1.trial4,9,Synchronous,i1,Male,76.0711
+synch.day9.i1.trial5,9,Synchronous,i1,Male,75.491
+synch.day9.i2.trial1,9,Synchronous,i2,Male,78.0731
+synch.day9.i2.trial2,9,Synchronous,i2,Male,79.0338
+synch.day9.i2.trial3,9,Synchronous,i2,Male,77.8042
+synch.day9.i2.trial4,9,Synchronous,i2,Male,78.7013
+synch.day9.i2.trial5,9,Synchronous,i2,Male,79.1179
+synch.day9.j2.trial1,9,Synchronous,j2,Male,79.608
+synch.day9.j2.trial2,9,Synchronous,j2,Male,77.5117
+synch.day9.j2.trial3,9,Synchronous,j2,Male,78.8939
+synch.day9.j2.trial4,9,Synchronous,j2,Male,78.738
+synch.day9.j2.trial5,9,Synchronous,j2,Male,77.358
+synch.day10.b1.trial1,10,Synchronous,b1,Female,75.1495
+synch.day10.b1.trial2,10,Synchronous,b1,Female,75.5975
+synch.day10.b1.trial3,10,Synchronous,b1,Female,77.1078
+synch.day10.b1.trial4,10,Synchronous,b1,Female,76.3312
+synch.day10.b1.trial5,10,Synchronous,b1,Female,76.9668
+synch.day10.c1.trial1,10,Synchronous,c1,Female,75.4472
+synch.day10.c1.trial2,10,Synchronous,c1,Female,75.9951
+synch.day10.c1.trial3,10,Synchronous,c1,Female,75.4932
+synch.day10.c1.trial4,10,Synchronous,c1,Female,75.9389
+synch.day10.c1.trial5,10,Synchronous,c1,Female,75.8217
+synch.day10.e1.trial1,10,Synchronous,e1,Female,77.3377
+synch.day10.e1.trial2,10,Synchronous,e1,Female,77.004
+synch.day10.e1.trial3,10,Synchronous,e1,Female,75.836
+synch.day10.e1.trial4,10,Synchronous,e1,Female,76.3739
+synch.day10.e1.trial5,10,Synchronous,e1,Female,76.151
+synch.day10.i1.trial1,10,Synchronous,i1,Male,78.933
+synch.day10.i1.trial2,10,Synchronous,i1,Male,77.6704
+synch.day10.i1.trial3,10,Synchronous,i1,Male,76.4466
+synch.day10.i1.trial4,10,Synchronous,i1,Male,77.5752
+synch.day10.i1.trial5,10,Synchronous,i1,Male,77.4824
+synch.day10.i2.trial1,10,Synchronous,i2,Male,78.2324
+synch.day10.i2.trial2,10,Synchronous,i2,Male,78.4686
+synch.day10.i2.trial3,10,Synchronous,i2,Male,76.6209
+synch.day10.i2.trial4,10,Synchronous,i2,Male,79.313
+synch.day10.i2.trial5,10,Synchronous,i2,Male,77.3352
+synch.day10.j2.trial1,10,Synchronous,j2,Male,80.6328
+synch.day10.j2.trial2,10,Synchronous,j2,Male,80.3955
+synch.day10.j2.trial3,10,Synchronous,j2,Male,81.4861
+synch.day10.j2.trial4,10,Synchronous,j2,Male,81.9001
+synch.day10.j2.trial5,10,Synchronous,j2,Male,79.8836
+synch.day11.b1.trial1,11,Synchronous,b1,Female,77.1857
+synch.day11.b1.trial2,11,Synchronous,b1,Female,77.5391
+synch.day11.b1.trial3,11,Synchronous,b1,Female,77.963
+synch.day11.b1.trial4,11,Synchronous,b1,Female,77.3457
+synch.day11.b1.trial5,11,Synchronous,b1,Female,76.3089
+synch.day11.c1.trial1,11,Synchronous,c1,Female,77.8409
+synch.day11.c1.trial2,11,Synchronous,c1,Female,76.5147
+synch.day11.c1.trial3,11,Synchronous,c1,Female,77.6078
+synch.day11.c1.trial4,11,Synchronous,c1,Female,76.5061
+synch.day11.c1.trial5,11,Synchronous,c1,Female,76.2006
+synch.day11.e1.trial1,11,Synchronous,e1,Female,75.1648
+synch.day11.e1.trial2,11,Synchronous,e1,Female,75.6099
+synch.day11.e1.trial3,11,Synchronous,e1,Female,75.9994
+synch.day11.e1.trial4,11,Synchronous,e1,Female,75.2579
+synch.day11.e1.trial5,11,Synchronous,e1,Female,76.8749
+synch.day11.i1.trial1,11,Synchronous,i1,Male,76.8026
+synch.day11.i1.trial2,11,Synchronous,i1,Male,76.779
+synch.day11.i1.trial3,11,Synchronous,i1,Male,76.3476
+synch.day11.i1.trial4,11,Synchronous,i1,Male,75.4694
+synch.day11.i1.trial5,11,Synchronous,i1,Male,75.0103
+synch.day11.i2.trial1,11,Synchronous,i2,Male,78.9351
+synch.day11.i2.trial2,11,Synchronous,i2,Male,78.9601
+synch.day11.i2.trial3,11,Synchronous,i2,Male,79.183
+synch.day11.i2.trial4,11,Synchronous,i2,Male,77.7899
+synch.day11.i2.trial5,11,Synchronous,i2,Male,75.758
+synch.day11.j2.trial1,11,Synchronous,j2,Male,77.6574
+synch.day11.j2.trial2,11,Synchronous,j2,Male,77.7903
+synch.day11.j2.trial3,11,Synchronous,j2,Male,78.0057
+synch.day11.j2.trial4,11,Synchronous,j2,Male,77.3877
+synch.day11.j2.trial5,11,Synchronous,j2,Male,78.4168
+synch.day12.b1.trial1,12,Synchronous,b1,Female,77.7254
+synch.day12.b1.trial2,12,Synchronous,b1,Female,76.4617
+synch.day12.b1.trial3,12,Synchronous,b1,Female,78.2918
+synch.day12.b1.trial4,12,Synchronous,b1,Female,78.4478
+synch.day12.b1.trial5,12,Synchronous,b1,Female,77.002
+synch.day12.c1.trial1,12,Synchronous,c1,Female,76.3297
+synch.day12.c1.trial2,12,Synchronous,c1,Female,75.7756
+synch.day12.c1.trial3,12,Synchronous,c1,Female,76.1377
+synch.day12.c1.trial4,12,Synchronous,c1,Female,76.3804
+synch.day12.c1.trial5,12,Synchronous,c1,Female,76.1085
+synch.day12.e1.trial1,12,Synchronous,e1,Female,76.201
+synch.day12.e1.trial2,12,Synchronous,e1,Female,77.4331
+synch.day12.e1.trial3,12,Synchronous,e1,Female,77.2016
+synch.day12.e1.trial4,12,Synchronous,e1,Female,77.2714
+synch.day12.e1.trial5,12,Synchronous,e1,Female,77.0959
+synch.day12.i1.trial1,12,Synchronous,i1,Male,78.8046
+synch.day12.i1.trial2,12,Synchronous,i1,Male,79.0113
+synch.day12.i1.trial3,12,Synchronous,i1,Male,77.871
+synch.day12.i1.trial4,12,Synchronous,i1,Male,76.8051
+synch.day12.i1.trial5,12,Synchronous,i1,Male,75.9127
+synch.day12.i2.trial1,12,Synchronous,i2,Male,80.1874
+synch.day12.i2.trial2,12,Synchronous,i2,Male,78.9756
+synch.day12.i2.trial3,12,Synchronous,i2,Male,78.8044
+synch.day12.i2.trial4,12,Synchronous,i2,Male,76.4761
+synch.day12.i2.trial5,12,Synchronous,i2,Male,77.7646
+synch.day12.j2.trial1,12,Synchronous,j2,Male,79.0292
+synch.day12.j2.trial2,12,Synchronous,j2,Male,78.2992
+synch.day12.j2.trial3,12,Synchronous,j2,Male,78.4994
+synch.day12.j2.trial4,12,Synchronous,j2,Male,77.94
+synch.day12.j2.trial5,12,Synchronous,j2,Male,77.7031
+fake.day1.c1.trial1,1,Fake Tail,c1,Female,77.4531
+fake.day1.c1.trial2,1,Fake Tail,c1,Female,77.2444
+fake.day1.c1.trial3,1,Fake Tail,c1,Female,78.5752
+fake.day1.c1.trial4,1,Fake Tail,c1,Female,73.4583
+fake.day1.c1.trial5,1,Fake Tail,c1,Female,77.2293
+fake.day1.e1.trial1,1,Fake Tail,e1,Female,72.177
+fake.day1.f1.trial1,1,Fake Tail,f1,Female,70.714
+fake.day1.f1.trial2,1,Fake Tail,f1,Female,70.8115
+fake.day1.f1.trial3,1,Fake Tail,f1,Female,75.1959
+fake.day1.f1.trial4,1,Fake Tail,f1,Female,71.391
+fake.day1.f1.trial5,1,Fake Tail,f1,Female,70.5815
+fake.day1.i1.trial1,1,Fake Tail,i1,Male,76.2606
+fake.day1.i1.trial2,1,Fake Tail,i1,Male,78.3358
+fake.day1.i1.trial3,1,Fake Tail,i1,Male,69.9258
+fake.day1.i1.trial4,1,Fake Tail,i1,Male,71.4552
+fake.day1.i1.trial5,1,Fake Tail,i1,Male,74.5513
+fake.day1.k1.trial1,1,Fake Tail,k1,Male,72.0321
+fake.day1.k1.trial2,1,Fake Tail,k1,Male,72.5805
+fake.day1.k1.trial3,1,Fake Tail,k1,Male,73.892
+fake.day1.k1.trial4,1,Fake Tail,k1,Male,73.9825
+fake.day1.k1.trial5,1,Fake Tail,k1,Male,73.461
+fake.day2.c1.trial1,2,Fake Tail,c1,Female,76.4302
+fake.day2.c1.trial2,2,Fake Tail,c1,Female,77.1288
+fake.day2.c1.trial3,2,Fake Tail,c1,Female,76.859
+fake.day2.c1.trial4,2,Fake Tail,c1,Female,77.5564
+fake.day2.c1.trial5,2,Fake Tail,c1,Female,76.5406
+fake.day2.f1.trial1,2,Fake Tail,f1,Female,72.4138
+fake.day2.f1.trial2,2,Fake Tail,f1,Female,73.6771
+fake.day2.f1.trial3,2,Fake Tail,f1,Female,72.3034
+fake.day2.f1.trial4,2,Fake Tail,f1,Female,72.8238
+fake.day2.f1.trial5,2,Fake Tail,f1,Female,73.8192
+fake.day2.i1.trial1,2,Fake Tail,i1,Male,74.9205
+fake.day2.i1.trial2,2,Fake Tail,i1,Male,73.9163
+fake.day2.i1.trial3,2,Fake Tail,i1,Male,73.8907
+fake.day2.j2.trial1,2,Fake Tail,j2,Male,71.8272
+fake.day2.j2.trial2,2,Fake Tail,j2,Male,71.2134
+fake.day2.j2.trial3,2,Fake Tail,j2,Male,71.9933
+fake.day2.j2.trial4,2,Fake Tail,j2,Male,68.6015
+fake.day2.j2.trial5,2,Fake Tail,j2,Male,76.2092
+fake.day2.k1.trial1,2,Fake Tail,k1,Male,71.3759
+fake.day2.k1.trial2,2,Fake Tail,k1,Male,70.7459
+fake.day2.k1.trial3,2,Fake Tail,k1,Male,69.9846
+fake.day2.k1.trial4,2,Fake Tail,k1,Male,73.5766
+fake.day2.k1.trial5,2,Fake Tail,k1,Male,75.2217
+fake.day3.c1.trial1,3,Fake Tail,c1,Female,72.9053
+fake.day3.c1.trial2,3,Fake Tail,c1,Female,75.0286
+fake.day3.c1.trial3,3,Fake Tail,c1,Female,75.4382
+fake.day3.c1.trial4,3,Fake Tail,c1,Female,74.9678
+fake.day3.c1.trial5,3,Fake Tail,c1,Female,73.9968
+fake.day3.e1.trial1,3,Fake Tail,e1,Female,76.443
+fake.day3.f1.trial1,3,Fake Tail,f1,Female,61.9059
+fake.day3.f1.trial2,3,Fake Tail,f1,Female,63.4394
+fake.day3.f1.trial3,3,Fake Tail,f1,Female,64.7057
+fake.day3.f1.trial4,3,Fake Tail,f1,Female,69.6816
+fake.day3.j2.trial1,3,Fake Tail,j2,Male,69.3018
+fake.day3.j2.trial2,3,Fake Tail,j2,Male,69.1589
+fake.day3.j2.trial3,3,Fake Tail,j2,Male,68.5539
+fake.day3.j2.trial4,3,Fake Tail,j2,Male,71.1078
+fake.day3.j2.trial5,3,Fake Tail,j2,Male,70.2402
+fake.day3.k1.trial1,3,Fake Tail,k1,Male,65.6724
+fake.day3.k1.trial2,3,Fake Tail,k1,Male,72.6791
+fake.day3.k1.trial3,3,Fake Tail,k1,Male,70.2239
+fake.day3.k1.trial4,3,Fake Tail,k1,Male,72.1285
+fake.day3.k1.trial5,3,Fake Tail,k1,Male,65.715
+fake.day4.c1.trial1,4,Fake Tail,c1,Female,77.7918
+fake.day4.c1.trial2,4,Fake Tail,c1,Female,77.0639
+fake.day4.c1.trial3,4,Fake Tail,c1,Female,78.9982
+fake.day4.c1.trial4,4,Fake Tail,c1,Female,78.81
+fake.day4.c1.trial5,4,Fake Tail,c1,Female,73.5921
+fake.day4.e1.trial1,4,Fake Tail,e1,Female,75.1743
+fake.day4.e1.trial2,4,Fake Tail,e1,Female,76.9239
+fake.day4.e1.trial3,4,Fake Tail,e1,Female,76.2635
+fake.day4.e1.trial4,4,Fake Tail,e1,Female,77.358
+fake.day4.e1.trial5,4,Fake Tail,e1,Female,78.2112
+fake.day4.f1.trial1,4,Fake Tail,f1,Female,74.3108
+fake.day4.f1.trial2,4,Fake Tail,f1,Female,73.4544
+fake.day4.f1.trial3,4,Fake Tail,f1,Female,72.8143
+fake.day4.f1.trial4,4,Fake Tail,f1,Female,73.5551
+fake.day4.f1.trial5,4,Fake Tail,f1,Female,72.5088
+fake.day4.j2.trial1,4,Fake Tail,j2,Male,70.8694
+fake.day4.j2.trial2,4,Fake Tail,j2,Male,71.4338
+fake.day4.j2.trial3,4,Fake Tail,j2,Male,72.319
+fake.day4.j2.trial4,4,Fake Tail,j2,Male,71.4213
+fake.day4.j2.trial5,4,Fake Tail,j2,Male,71.1988
+fake.day4.k1.trial1,4,Fake Tail,k1,Male,74.839
+fake.day4.k1.trial2,4,Fake Tail,k1,Male,74.5299
+fake.day4.k1.trial3,4,Fake Tail,k1,Male,69.6836
+fake.day4.k1.trial4,4,Fake Tail,k1,Male,71.6214
+fake.day4.k1.trial5,4,Fake Tail,k1,Male,70.8892
+fake.day5.c1.trial1,5,Fake Tail,c1,Female,76.3926
+fake.day5.c1.trial2,5,Fake Tail,c1,Female,78.2082
+fake.day5.c1.trial3,5,Fake Tail,c1,Female,77.9113
+fake.day5.c1.trial4,5,Fake Tail,c1,Female,78.5458
+fake.day5.c1.trial5,5,Fake Tail,c1,Female,78.282
+fake.day5.e1.trial1,5,Fake Tail,e1,Female,77.0563
+fake.day5.e1.trial2,5,Fake Tail,e1,Female,77.065
+fake.day5.e1.trial3,5,Fake Tail,e1,Female,73.7801
+fake.day5.e1.trial4,5,Fake Tail,e1,Female,75.9674
+fake.day5.e1.trial5,5,Fake Tail,e1,Female,74.5033
+fake.day5.f1.trial1,5,Fake Tail,f1,Female,74.3717
+fake.day5.f1.trial2,5,Fake Tail,f1,Female,74.4309
+fake.day5.f1.trial3,5,Fake Tail,f1,Female,74.8397
+fake.day6.c1.trial1,6,Fake Tail,c1,Female,73.1678
+fake.day6.c1.trial2,6,Fake Tail,c1,Female,74.594
+fake.day6.c1.trial3,6,Fake Tail,c1,Female,75.5074
+fake.day6.c1.trial4,6,Fake Tail,c1,Female,76.2052
+fake.day6.c1.trial5,6,Fake Tail,c1,Female,75.7388
+fake.day6.e1.trial1,6,Fake Tail,e1,Female,75.1223
+fake.day6.e1.trial2,6,Fake Tail,e1,Female,75.7081
+fake.day6.e1.trial3,6,Fake Tail,e1,Female,72.0867
+fake.day6.f1.trial1,6,Fake Tail,f1,Female,72.6613
+fake.day6.f1.trial2,6,Fake Tail,f1,Female,72.4345
+fake.day6.f1.trial3,6,Fake Tail,f1,Female,72.8915
+fake.day6.f1.trial4,6,Fake Tail,f1,Female,72.3041
+fake.day6.f1.trial5,6,Fake Tail,f1,Female,72.8507
+fake.day6.i1.trial1,6,Fake Tail,i1,Male,68.0654
+fake.day6.i1.trial2,6,Fake Tail,i1,Male,71.2796
+fake.day6.i1.trial3,6,Fake Tail,i1,Male,70.5983
+fake.day6.i1.trial4,6,Fake Tail,i1,Male,68.7727
+fake.day6.i1.trial5,6,Fake Tail,i1,Male,68.2866
+fake.day6.j2.trial1,6,Fake Tail,j2,Male,68.4783
+fake.day6.j2.trial2,6,Fake Tail,j2,Male,71.3112
+fake.day6.j2.trial3,6,Fake Tail,j2,Male,64.2213
+fake.day6.j2.trial4,6,Fake Tail,j2,Male,70.6115
+fake.day6.j2.trial5,6,Fake Tail,j2,Male,68.4026
+fake.day6.k1.trial1,6,Fake Tail,k1,Male,67.5966
+fake.day6.k1.trial2,6,Fake Tail,k1,Male,72.0754
+fake.day6.k1.trial3,6,Fake Tail,k1,Male,73.9828
+fake.day7.a1.trial1,7,Fake Tail,a1,Female,75.0092
+fake.day7.a1.trial2,7,Fake Tail,a1,Female,75.3142
+fake.day7.a1.trial3,7,Fake Tail,a1,Female,75.4745
+fake.day7.a1.trial4,7,Fake Tail,a1,Female,74.9613
+fake.day7.a1.trial5,7,Fake Tail,a1,Female,75.1802
+fake.day7.d1.trial1,7,Fake Tail,d1,Female,74.7942
+fake.day7.d1.trial2,7,Fake Tail,d1,Female,77.7563
+fake.day7.d1.trial3,7,Fake Tail,d1,Female,75.2844
+fake.day7.d1.trial4,7,Fake Tail,d1,Female,74.7813
+fake.day7.d1.trial5,7,Fake Tail,d1,Female,75.5122
+fake.day7.f2.trial1,7,Fake Tail,f2,Female,76.2222
+fake.day7.f2.trial2,7,Fake Tail,f2,Female,74.3204
+fake.day7.f2.trial3,7,Fake Tail,f2,Female,75.8375
+fake.day7.f2.trial4,7,Fake Tail,f2,Female,75.8988
+fake.day7.f2.trial5,7,Fake Tail,f2,Female,74.7215
+fake.day7.h2.trial1,7,Fake Tail,h2,Male,69.0868
+fake.day7.h2.trial2,7,Fake Tail,h2,Male,67.7141
+fake.day7.h2.trial3,7,Fake Tail,h2,Male,67.5571
+fake.day7.h2.trial4,7,Fake Tail,h2,Male,67.256
+fake.day7.h2.trial5,7,Fake Tail,h2,Male,66.0609
+fake.day7.l1.trial1,7,Fake Tail,l1,Male,76.4628
+fake.day7.l1.trial2,7,Fake Tail,l1,Male,75.2543
+fake.day7.l1.trial3,7,Fake Tail,l1,Male,76.049
+fake.day8.a1.trial1,8,Fake Tail,a1,Female,76.0852
+fake.day8.a1.trial2,8,Fake Tail,a1,Female,66.4823
+fake.day8.a1.trial3,8,Fake Tail,a1,Female,75.0671
+fake.day8.a1.trial4,8,Fake Tail,a1,Female,71.8246
+fake.day8.a1.trial5,8,Fake Tail,a1,Female,75.8828
+fake.day8.d1.trial1,8,Fake Tail,d1,Female,75.3871
+fake.day8.d1.trial2,8,Fake Tail,d1,Female,75.552
+fake.day8.d1.trial3,8,Fake Tail,d1,Female,76.3444
+fake.day8.d1.trial4,8,Fake Tail,d1,Female,72.9322
+fake.day8.d1.trial5,8,Fake Tail,d1,Female,72.852
+fake.day8.f2.trial1,8,Fake Tail,f2,Female,76.7154
+fake.day8.f2.trial2,8,Fake Tail,f2,Female,77.7366
+fake.day8.f2.trial3,8,Fake Tail,f2,Female,72.1305
+fake.day8.f2.trial4,8,Fake Tail,f2,Female,77.1887
+fake.day8.f2.trial5,8,Fake Tail,f2,Female,77.2619
+fake.day8.h2.trial1,8,Fake Tail,h2,Male,77.6833
+fake.day8.h2.trial2,8,Fake Tail,h2,Male,77.528
+fake.day8.h2.trial3,8,Fake Tail,h2,Male,78.6647
+fake.day8.h2.trial4,8,Fake Tail,h2,Male,75.9485
+fake.day8.h2.trial5,8,Fake Tail,h2,Male,78.4622
+fake.day8.k2.trial1,8,Fake Tail,k2,Male,77.8406
+fake.day8.k2.trial2,8,Fake Tail,k2,Male,79.8952
+fake.day9.a1.trial1,9,Fake Tail,a1,Female,77.3992
+fake.day9.a1.trial2,9,Fake Tail,a1,Female,77.1085
+fake.day9.a1.trial3,9,Fake Tail,a1,Female,77.3096
+fake.day9.a1.trial4,9,Fake Tail,a1,Female,77.4092
+fake.day9.a1.trial5,9,Fake Tail,a1,Female,77.5567
+fake.day9.d1.trial1,9,Fake Tail,d1,Female,69.7707
+fake.day9.d1.trial2,9,Fake Tail,d1,Female,72.4609
+fake.day9.d1.trial3,9,Fake Tail,d1,Female,70.9899
+fake.day9.d1.trial4,9,Fake Tail,d1,Female,71.1817
+fake.day9.d1.trial5,9,Fake Tail,d1,Female,73.0768
+fake.day9.f2.trial1,9,Fake Tail,f2,Female,76.5847
+fake.day9.f2.trial2,9,Fake Tail,f2,Female,76.9271
+fake.day9.f2.trial3,9,Fake Tail,f2,Female,76.8106
+fake.day9.f2.trial4,9,Fake Tail,f2,Female,76.8143
+fake.day9.f2.trial5,9,Fake Tail,f2,Female,77.1397
+fake.day9.h2.trial2,9,Fake Tail,h2,Male,76.1578
+fake.day9.h2.trial3,9,Fake Tail,h2,Male,77.2339
+fake.day9.h2.trial4,9,Fake Tail,h2,Male,76.8605
+fake.day9.h2.trial5,9,Fake Tail,h2,Male,77.7515
+fake.day9.k2.trial1,9,Fake Tail,k2,Male,75.693
+fake.day9.k2.trial2,9,Fake Tail,k2,Male,79.2099
+fake.day9.k2.trial3,9,Fake Tail,k2,Male,78.6236
+fake.day9.k2.trial4,9,Fake Tail,k2,Male,76.9172
+fake.day9.k2.trial5,9,Fake Tail,k2,Male,78.7996
+fake.day9.l1.trial1,9,Fake Tail,l1,Male,79.4882
+fake.day9.l1.trial2,9,Fake Tail,l1,Male,81.343
+fake.day9.l1.trial3,9,Fake Tail,l1,Male,80.9763
+fake.day9.l1.trial4,9,Fake Tail,l1,Male,79.3602
+fake.day9.l1.trial5,9,Fake Tail,l1,Male,78.906
+fake.day10.a1.trial1,10,Fake Tail,a1,Female,74.2424
+fake.day10.a1.trial2,10,Fake Tail,a1,Female,74.7314
+fake.day10.a1.trial3,10,Fake Tail,a1,Female,74.9058
+fake.day10.a1.trial4,10,Fake Tail,a1,Female,74.4198
+fake.day10.a1.trial5,10,Fake Tail,a1,Female,75.5394
+fake.day10.d1.trial1,10,Fake Tail,d1,Female,70.3759
+fake.day10.d1.trial2,10,Fake Tail,d1,Female,69.0573
+fake.day10.d1.trial3,10,Fake Tail,d1,Female,71.0342
+fake.day10.d1.trial4,10,Fake Tail,d1,Female,67.867
+fake.day10.d1.trial5,10,Fake Tail,d1,Female,70.1264
+fake.day10.f2.trial1,10,Fake Tail,f2,Female,76.7498
+fake.day10.f2.trial2,10,Fake Tail,f2,Female,75.8977
+fake.day10.f2.trial3,10,Fake Tail,f2,Female,76.9372
+fake.day10.f2.trial4,10,Fake Tail,f2,Female,76.453
+fake.day10.f2.trial5,10,Fake Tail,f2,Female,76.903
+fake.day10.h2.trial1,10,Fake Tail,h2,Male,77.6455
+fake.day10.h2.trial2,10,Fake Tail,h2,Male,77.6261
+fake.day10.h2.trial3,10,Fake Tail,h2,Male,76.4777
+fake.day10.h2.trial4,10,Fake Tail,h2,Male,78.0621
+fake.day10.h2.trial5,10,Fake Tail,h2,Male,76.7932
+fake.day10.k2.trial1,10,Fake Tail,k2,Male,80.7601
+fake.day10.k2.trial2,10,Fake Tail,k2,Male,80.6021
+fake.day10.k2.trial3,10,Fake Tail,k2,Male,81.7928
+fake.day10.k2.trial4,10,Fake Tail,k2,Male,80.8254
+fake.day10.k2.trial5,10,Fake Tail,k2,Male,79.5793
+fake.day10.l1.trial1,10,Fake Tail,l1,Male,78.6593
+fake.day10.l1.trial2,10,Fake Tail,l1,Male,78.277
+fake.day10.l1.trial3,10,Fake Tail,l1,Male,79.2078
+fake.day10.l1.trial4,10,Fake Tail,l1,Male,77.9392
+fake.day10.l1.trial5,10,Fake Tail,l1,Male,79.0046
+fake.day11.a1.trial1,11,Fake Tail,a1,Female,70.5095
+fake.day11.a1.trial2,11,Fake Tail,a1,Female,71.503
+fake.day11.a1.trial3,11,Fake Tail,a1,Female,72.2128
+fake.day11.a1.trial4,11,Fake Tail,a1,Female,73.2253
+fake.day11.a1.trial5,11,Fake Tail,a1,Female,72.2049
+fake.day11.d1.trial1,11,Fake Tail,d1,Female,71.3391
+fake.day11.d1.trial2,11,Fake Tail,d1,Female,71.4495
+fake.day11.d1.trial3,11,Fake Tail,d1,Female,71.6927
+fake.day11.d1.trial4,11,Fake Tail,d1,Female,73.7056
+fake.day11.d1.trial5,11,Fake Tail,d1,Female,70.5382
+fake.day11.f2.trial1,11,Fake Tail,f2,Female,77.0028
+fake.day11.f2.trial2,11,Fake Tail,f2,Female,75.5318
+fake.day11.f2.trial3,11,Fake Tail,f2,Female,75.4035
+fake.day11.f2.trial4,11,Fake Tail,f2,Female,75.8967
+fake.day11.f2.trial5,11,Fake Tail,f2,Female,75.7876
+fake.day11.h2.trial1,11,Fake Tail,h2,Male,77.1111
+fake.day11.h2.trial2,11,Fake Tail,h2,Male,75.6459
+fake.day11.h2.trial3,11,Fake Tail,h2,Male,75.8931
+fake.day11.h2.trial4,11,Fake Tail,h2,Male,77.2934
+fake.day11.h2.trial5,11,Fake Tail,h2,Male,75.8795
+fake.day11.k2.trial1,11,Fake Tail,k2,Male,78.1947
+fake.day11.k2.trial2,11,Fake Tail,k2,Male,78.2088
+fake.day11.k2.trial3,11,Fake Tail,k2,Male,77.1525
+fake.day11.k2.trial4,11,Fake Tail,k2,Male,76.9838
+fake.day11.k2.trial5,11,Fake Tail,k2,Male,78.1212
+fake.day11.l1.trial1,11,Fake Tail,l1,Male,76.1604
+fake.day11.l1.trial2,11,Fake Tail,l1,Male,76.4817
+fake.day11.l1.trial3,11,Fake Tail,l1,Male,75.9987
+fake.day11.l1.trial4,11,Fake Tail,l1,Male,77.377
+fake.day11.l1.trial5,11,Fake Tail,l1,Male,76.8604
+fake.day12.a1.trial1,12,Fake Tail,a1,Female,72.9757
+fake.day12.a1.trial2,12,Fake Tail,a1,Female,72.5214
+fake.day12.a1.trial3,12,Fake Tail,a1,Female,78.1515
+fake.day12.a1.trial4,12,Fake Tail,a1,Female,78.4083
+fake.day12.a1.trial5,12,Fake Tail,a1,Female,78.3008
+fake.day12.d1.trial1,12,Fake Tail,d1,Female,73.6532
+fake.day12.d1.trial2,12,Fake Tail,d1,Female,70.6283
+fake.day12.d1.trial3,12,Fake Tail,d1,Female,71.2305
+fake.day12.d1.trial4,12,Fake Tail,d1,Female,70.5339
+fake.day12.d1.trial5,12,Fake Tail,d1,Female,71.1724
+fake.day12.f2.trial1,12,Fake Tail,f2,Female,77.4349
+fake.day12.f2.trial2,12,Fake Tail,f2,Female,76.2892
+fake.day12.f2.trial3,12,Fake Tail,f2,Female,77.4295
+fake.day12.f2.trial4,12,Fake Tail,f2,Female,77.0904
+fake.day12.f2.trial5,12,Fake Tail,f2,Female,76.0767
+fake.day12.h2.trial1,12,Fake Tail,h2,Male,76.6484
+fake.day12.h2.trial2,12,Fake Tail,h2,Male,74.124
+fake.day12.h2.trial3,12,Fake Tail,h2,Male,75.7024
+fake.day12.h2.trial4,12,Fake Tail,h2,Male,75.1315
+fake.day12.h2.trial5,12,Fake Tail,h2,Male,73.8912
+fake.day12.k2.trial1,12,Fake Tail,k2,Male,78.6649
+fake.day12.k2.trial2,12,Fake Tail,k2,Male,76.8021
+fake.day12.k2.trial3,12,Fake Tail,k2,Male,77.6893
+fake.day12.k2.trial4,12,Fake Tail,k2,Male,77.5736
+fake.day12.k2.trial5,12,Fake Tail,k2,Male,77.7093
+fake.day12.l1.trial1,12,Fake Tail,l1,Male,79.6025
+fake.day12.l1.trial2,12,Fake Tail,l1,Male,76.5108
+fake.day12.l1.trial3,12,Fake Tail,l1,Male,78.3832
+fake.day12.l1.trial4,12,Fake Tail,l1,Male,75.8119
+real.day1.a2.trial1,1,Real Tail,a2,Female,77.9823
+real.day1.a2.trial2,1,Real Tail,a2,Female,77.984
+real.day1.a2.trial3,1,Real Tail,a2,Female,78.1521
+real.day1.b1.trial1,1,Real Tail,b1,Female,78.7328
+real.day1.c2.trial1,1,Real Tail,c2,Female,73.6739
+real.day1.c2.trial2,1,Real Tail,c2,Female,80.9642
+real.day1.c2.trial3,1,Real Tail,c2,Female,74.3217
+real.day1.c2.trial4,1,Real Tail,c2,Female,74.9834
+real.day1.c2.trial5,1,Real Tail,c2,Female,74.4191
+real.day1.g2.trial1,1,Real Tail,g2,Male,71.6859
+real.day1.g2.trial2,1,Real Tail,g2,Male,71.6154
+real.day1.g2.trial3,1,Real Tail,g2,Male,69.4721
+real.day1.g2.trial4,1,Real Tail,g2,Male,65.9563
+real.day1.g2.trial5,1,Real Tail,g2,Male,65.667
+real.day1.i2.trial1,1,Real Tail,i2,Male,69.6852
+real.day2.a2.trial1,2,Real Tail,a2,Female,76.3248
+real.day2.a2.trial2,2,Real Tail,a2,Female,76.4046
+real.day2.a2.trial3,2,Real Tail,a2,Female,76.8042
+real.day2.a2.trial4,2,Real Tail,a2,Female,77.1587
+real.day2.a2.trial5,2,Real Tail,a2,Female,77.9404
+real.day2.b2.trial1,2,Real Tail,b1,Female,77.3172
+real.day2.c2.trial1,2,Real Tail,c2,Female,75.8381
+real.day2.c2.trial2,2,Real Tail,c2,Female,76.4505
+real.day2.c2.trial3,2,Real Tail,c2,Female,75.8235
+real.day2.c2.trial4,2,Real Tail,c2,Female,77.0617
+real.day2.c2.trial5,2,Real Tail,c2,Female,76.5181
+real.day2.g2.trial1,2,Real Tail,g2,Male,71.4442
+real.day2.g2.trial2,2,Real Tail,g2,Male,70.2959
+real.day2.g2.trial3,2,Real Tail,g2,Male,67.683
+real.day2.i2.trial1,2,Real Tail,i2,Male,74.9281
+real.day3.a2.trial1,3,Real Tail,a2,Female,75.6005
+real.day3.a2.trial2,3,Real Tail,a2,Female,76.5023
+real.day3.a2.trial3,3,Real Tail,a2,Female,75.3674
+real.day3.a2.trial4,3,Real Tail,a2,Female,75.8688
+real.day3.a2.trial5,3,Real Tail,a2,Female,75.5514
+real.day3.b1.trial1,3,Real Tail,b1,Female,73.8297
+real.day3.c2.trial1,3,Real Tail,c2,Female,74.6372
+real.day3.c2.trial2,3,Real Tail,c2,Female,73.963
+real.day3.c2.trial3,3,Real Tail,c2,Female,69.6502
+real.day3.c2.trial4,3,Real Tail,c2,Female,72.9624
+real.day3.c2.trial5,3,Real Tail,c2,Female,69.672
+real.day3.g2.trial1,3,Real Tail,g2,Male,67.0687
+real.day3.g2.trial2,3,Real Tail,g2,Male,68.9864
+real.day3.g2.trial3,3,Real Tail,g2,Male,67.5247
+real.day3.g2.trial4,3,Real Tail,g2,Male,68.6871
+real.day3.g2.trial5,3,Real Tail,g2,Male,61.696
+real.day3.i2.trial1,3,Real Tail,i2,Male,66.2415
+real.day3.i2.trial2,3,Real Tail,i2,Male,65.6466
+real.day3.i2.trial3,3,Real Tail,i2,Male,65.737
+real.day3.i2.trial4,3,Real Tail,i2,Male,67.1174
+real.day3.i2.trial5,3,Real Tail,i2,Male,66.2661
+real.day3.l2.trial1,3,Real Tail,l2,Male,73.0502
+real.day3.l2.trial2,3,Real Tail,l2,Male,68.2636
+real.day4.a2.trial1,4,Real Tail,a2,Female,78.2557
+real.day4.a2.trial2,4,Real Tail,a2,Female,78.3795
+real.day4.a2.trial3,4,Real Tail,a2,Female,78.0546
+real.day4.a2.trial4,4,Real Tail,a2,Female,77.8699
+real.day4.a2.trial5,4,Real Tail,a2,Female,77.3355
+real.day4.b1.trial1,4,Real Tail,b1,Female,77.2269
+real.day4.c2.trial1,4,Real Tail,c2,Female,73.2226
+real.day4.c2.trial2,4,Real Tail,c2,Female,73.9008
+real.day4.c2.trial3,4,Real Tail,c2,Female,76.9402
+real.day4.c2.trial4,4,Real Tail,c2,Female,75.4103
+real.day4.c2.trial5,4,Real Tail,c2,Female,74.4428
+real.day4.g2.trial1,4,Real Tail,g2,Male,66.0928
+real.day4.i2.trial1,4,Real Tail,i2,Male,69.8395
+real.day4.i2.trial2,4,Real Tail,i2,Male,70.6404
+real.day4.i2.trial3,4,Real Tail,i2,Male,72.6065
+real.day4.i2.trial4,4,Real Tail,i2,Male,71.355
+real.day4.i2.trial5,4,Real Tail,i2,Male,72.2082
+real.day5.a2.trial1,5,Real Tail,a2,Female,77.1115
+real.day5.a2.trial2,5,Real Tail,a2,Female,78.5297
+real.day5.a2.trial3,5,Real Tail,a2,Female,78.3414
+real.day5.a2.trial4,5,Real Tail,a2,Female,78.15
+real.day5.a2.trial5,5,Real Tail,a2,Female,78.2926
+real.day5.b1.trial1,5,Real Tail,b1,Female,78.4071
+real.day5.c2.trial1,5,Real Tail,c2,Female,76.3326
+real.day5.c2.trial2,5,Real Tail,c2,Female,76.7969
+real.day5.c2.trial3,5,Real Tail,c2,Female,77.032
+real.day5.c2.trial4,5,Real Tail,c2,Female,75.5252
+real.day5.c2.trial5,5,Real Tail,c2,Female,76.8712
+real.day5.g2.trial1,5,Real Tail,g2,Male,73.0174
+real.day5.g2.trial2,5,Real Tail,g2,Male,67.029
+real.day6.a2.trial1,6,Real Tail,a2,Female,75.7519
+real.day6.a2.trial2,6,Real Tail,a2,Female,77.639
+real.day6.a2.trial3,6,Real Tail,a2,Female,76.9307
+real.day6.a2.trial4,6,Real Tail,a2,Female,75.9084
+real.day6.a2.trial5,6,Real Tail,a2,Female,75.1643
+real.day6.b1.trial1,6,Real Tail,b1,Female,75.0363
+real.day6.b1.trial2,6,Real Tail,b1,Female,74.893
+real.day6.b1.trial3,6,Real Tail,b1,Female,75.2764
+real.day6.b1.trial4,6,Real Tail,b1,Female,70.8767
+real.day6.b1.trial5,6,Real Tail,b1,Female,72.4385
+real.day6.c2.trial1,6,Real Tail,c2,Female,75.2908
+real.day6.c2.trial2,6,Real Tail,c2,Female,75.1609
+real.day6.c2.trial3,6,Real Tail,c2,Female,74.7272
+real.day6.c2.trial4,6,Real Tail,c2,Female,74.9179
+real.day6.c2.trial5,6,Real Tail,c2,Female,73.2927
+real.day6.g2.trial1,6,Real Tail,g2,Male,67.5042
+real.day6.g2.trial2,6,Real Tail,g2,Male,66.7219
+real.day6.i2.trial1,6,Real Tail,i2,Male,69.4621
+real.day6.i2.trial2,6,Real Tail,i2,Male,70.5388
+real.day6.i2.trial3,6,Real Tail,i2,Male,70.2775
+real.day6.i2.trial4,6,Real Tail,i2,Male,68.3948
+real.day6.i2.trial5,6,Real Tail,i2,Male,68.0452
+real.day6.l2.trial1,6,Real Tail,l2,Male,73.6741
+real.day6.l2.trial2,6,Real Tail,l2,Male,72.373
+real.day6.l2.trial3,6,Real Tail,l2,Male,71.4755
+real.day6.l2.trial4,6,Real Tail,l2,Male,71.1088
+real.day7.b2.trial1,7,Real Tail,b2,Female,74.9551
+real.day7.b2.trial2,7,Real Tail,b2,Female,75.8185
+real.day7.b2.trial3,7,Real Tail,b2,Female,73.7127
+real.day7.b2.trial4,7,Real Tail,b2,Female,74.4036
+real.day7.b2.trial5,7,Real Tail,b2,Female,75.2535
+real.day7.e2.trial1,7,Real Tail,e2,Female,73.1182
+real.day7.e2.trial2,7,Real Tail,e2,Female,76.8785
+real.day7.e2.trial3,7,Real Tail,e2,Female,76.3193
+real.day7.e2.trial4,7,Real Tail,e2,Female,79.964
+real.day7.e2.trial5,7,Real Tail,e2,Female,73.8446
+real.day7.h1.trial1,7,Real Tail,h1,Male,70.9515
+real.day7.h1.trial2,7,Real Tail,h1,Male,70.8281
+real.day7.h1.trial3,7,Real Tail,h1,Male,72.0124
+real.day7.h1.trial4,7,Real Tail,h1,Male,69.9638
+real.day7.h1.trial5,7,Real Tail,h1,Male,71.7975
+real.day7.j1.trial1,7,Real Tail,j1,Male,65.8174
+real.day7.j1.trial2,7,Real Tail,j1,Male,68.8647
+real.day7.j1.trial3,7,Real Tail,j1,Male,70.3058
+real.day8.b2.trial1,8,Real Tail,b2,Female,74.303
+real.day8.b2.trial2,8,Real Tail,b2,Female,73.0266
+real.day8.b2.trial3,8,Real Tail,b2,Female,74.2474
+real.day8.b2.trial4,8,Real Tail,b2,Female,72.3254
+real.day8.b2.trial5,8,Real Tail,b2,Female,71.6172
+real.day8.e2.trial1,8,Real Tail,e2,Female,73.154
+real.day8.e2.trial2,8,Real Tail,e2,Female,72.0902
+real.day8.e2.trial3,8,Real Tail,e2,Female,71.844
+real.day8.e2.trial4,8,Real Tail,e2,Female,71.9885
+real.day8.e2.trial5,8,Real Tail,e2,Female,71.7036
+real.day8.g1.trial1,8,Real Tail,g1,Male,78.212
+real.day8.g1.trial2,8,Real Tail,g1,Male,79.2451
+real.day8.g1.trial3,8,Real Tail,g1,Male,80.7423
+real.day8.g1.trial4,8,Real Tail,g1,Male,79.2177
+real.day8.g1.trial5,8,Real Tail,g1,Male,79.7726
+real.day8.h1.trial1,8,Real Tail,h1,Male,67.8266
+real.day8.h1.trial2,8,Real Tail,h1,Male,68.0327
+real.day8.h1.trial3,8,Real Tail,h1,Male,67.8843
+real.day8.h1.trial4,8,Real Tail,h1,Male,68.1195
+real.day8.h1.trial5,8,Real Tail,h1,Male,66.6434
+real.day9.b2.trial1,9,Real Tail,b2,Female,74.229
+real.day9.b2.trial2,9,Real Tail,b2,Female,74.8063
+real.day9.b2.trial3,9,Real Tail,b2,Female,74.4704
+real.day9.b2.trial4,9,Real Tail,b2,Female,74.6499
+real.day9.b2.trial5,9,Real Tail,b2,Female,75.385
+real.day9.e2.trial1,9,Real Tail,e2,Female,77.8214
+real.day9.e2.trial2,9,Real Tail,e2,Female,75.9486
+real.day9.e2.trial3,9,Real Tail,e2,Female,76.9251
+real.day9.e2.trial4,9,Real Tail,e2,Female,75.9252
+real.day9.e2.trial5,9,Real Tail,e2,Female,76.6024
+real.day9.g1.trial1,9,Real Tail,g1,Male,78.5657
+real.day9.g1.trial2,9,Real Tail,g1,Male,76.6642
+real.day9.g1.trial3,9,Real Tail,g1,Male,76.6699
+real.day9.g1.trial4,9,Real Tail,g1,Male,78.2326
+real.day9.g1.trial5,9,Real Tail,g1,Male,79.3083
+real.day9.h1.trial1,9,Real Tail,h1,Male,69.9887
+real.day9.h1.trial2,9,Real Tail,h1,Male,70.4208
+real.day9.h1.trial3,9,Real Tail,h1,Male,69.9698
+real.day9.h1.trial4,9,Real Tail,h1,Male,73.1122
+real.day9.h1.trial5,9,Real Tail,h1,Male,73.1641
+real.day9.j1.trial1,9,Real Tail,j1,Male,76.1926
+real.day10.b2.trial1,10,Real Tail,b2,Female,76.73
+real.day10.b2.trial2,10,Real Tail,b2,Female,76.8809
+real.day10.b2.trial3,10,Real Tail,b2,Female,77.8395
+real.day10.b2.trial4,10,Real Tail,b2,Female,76.5749
+real.day10.b2.trial5,10,Real Tail,b2,Female,75.5643
+real.day10.e2.trial1,10,Real Tail,e2,Female,74.0627
+real.day10.e2.trial2,10,Real Tail,e2,Female,73.7721
+real.day10.e2.trial3,10,Real Tail,e2,Female,75.4413
+real.day10.e2.trial4,10,Real Tail,e2,Female,75.2533
+real.day10.e2.trial5,10,Real Tail,e2,Female,74.3844
+real.day10.g1.trial1,10,Real Tail,g1,Male,79.1318
+real.day10.g1.trial2,10,Real Tail,g1,Male,76.2017
+real.day10.g1.trial3,10,Real Tail,g1,Male,77.3882
+real.day10.g1.trial4,10,Real Tail,g1,Male,77.6747
+real.day10.g1.trial5,10,Real Tail,g1,Male,78.2482
+real.day10.h1.trial1,10,Real Tail,h1,Male,71.4758
+real.day10.h1.trial2,10,Real Tail,h1,Male,71.4289
+real.day10.h1.trial3,10,Real Tail,h1,Male,71.8316
+real.day10.h1.trial4,10,Real Tail,h1,Male,69.9737
+real.day10.h1.trial5,10,Real Tail,h1,Male,69.4939
+real.day10.j1.trial1,10,Real Tail,j1,Male,77.3965
+real.day10.j1.trial2,10,Real Tail,j1,Male,76.9704
+real.day10.j1.trial3,10,Real Tail,j1,Male,78.1409
+real.day11.b2.trial1,11,Real Tail,b2,Female,76.9528
+real.day11.b2.trial2,11,Real Tail,b2,Female,77.4609
+real.day11.b2.trial3,11,Real Tail,b2,Female,77.1822
+real.day11.b2.trial4,11,Real Tail,b2,Female,73.3546
+real.day11.b2.trial5,11,Real Tail,b2,Female,78.0228
+real.day11.e2.trial1,11,Real Tail,e2,Female,74.5425
+real.day11.e2.trial2,11,Real Tail,e2,Female,72.5999
+real.day11.e2.trial3,11,Real Tail,e2,Female,75.2863
+real.day11.e2.trial4,11,Real Tail,e2,Female,71.826
+real.day11.e2.trial5,11,Real Tail,e2,Female,71.8836
+real.day11.g1.trial1,11,Real Tail,g1,Male,77.5732
+real.day11.g1.trial2,11,Real Tail,g1,Male,78.4176
+real.day11.g1.trial3,11,Real Tail,g1,Male,76.1371
+real.day11.g1.trial4,11,Real Tail,g1,Male,78.206
+real.day11.g1.trial5,11,Real Tail,g1,Male,76.7885
+real.day11.h1.trial1,11,Real Tail,h1,Male,69.9783
+real.day11.h1.trial2,11,Real Tail,h1,Male,70.1311
+real.day11.h1.trial3,11,Real Tail,h1,Male,69.5051
+real.day11.h1.trial4,11,Real Tail,h1,Male,69.6838
+real.day11.h1.trial5,11,Real Tail,h1,Male,69.9099
+real.day11.j1.trial1,11,Real Tail,j1,Male,79.3566
+real.day11.j1.trial2,11,Real Tail,j1,Male,76.9986
+real.day11.j1.trial3,11,Real Tail,j1,Male,77.442
+real.day12.b2.trial1,12,Real Tail,b2,Female,76.7358
+real.day12.b2.trial2,12,Real Tail,b2,Female,77.0655
+real.day12.b2.trial3,12,Real Tail,b2,Female,77.3881
+real.day12.b2.trial4,12,Real Tail,b2,Female,78.0198
+real.day12.b2.trial5,12,Real Tail,b2,Female,78.6907
+real.day12.e2.trial1,12,Real Tail,e2,Female,75.2495
+real.day12.e2.trial2,12,Real Tail,e2,Female,76.1166
+real.day12.e2.trial3,12,Real Tail,e2,Female,75.0948
+real.day12.e2.trial4,12,Real Tail,e2,Female,72.5759
+real.day12.e2.trial5,12,Real Tail,e2,Female,75.837
+real.day12.g1.trial1,12,Real Tail,g1,Male,78.604
+real.day12.g1.trial2,12,Real Tail,g1,Male,80.1903
+real.day12.g1.trial3,12,Real Tail,g1,Male,76.1973
+real.day12.g1.trial4,12,Real Tail,g1,Male,75.0826
+real.day12.g1.trial5,12,Real Tail,g1,Male,75.9208
+real.day12.h1.trial1,12,Real Tail,h1,Male,75.5056
+real.day12.h1.trial2,12,Real Tail,h1,Male,73.8193
+real.day12.h1.trial3,12,Real Tail,h1,Male,73.9418
+real.day12.h1.trial4,12,Real Tail,h1,Male,76.386
+real.day12.h1.trial5,12,Real Tail,h1,Male,75.4603
