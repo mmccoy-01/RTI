@@ -16,13 +16,3 @@ i((Real Tail \n 12 rats)) --> l((6 female rats))
 j((Fake Tail \n 12 rats)) --> m((6 male rats))
 j((Fake Tail \n 12 rats)) --> n((6 female rats))
 ```
----
-# Restrainer by size
-```mermaid
-flowchart LR
-A((Plas Lab: 543-RR)) -->|125-250g| C((Male: \n Weeks 5-7))
-A((Plas Lab: 543-RR)) -->|125-250g| D((Female: \n Weeks 5-9.5))
-		
-B((Plas Labs: 544-RR)) -->|250-500g| E((Male: \n Weeks 7-15))
-B((Plas Labs: 544-RR)) -->|250-500g| F((Female: \n Weeks >9.5))
-```
