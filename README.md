@@ -21,12 +21,12 @@ Wada, M., Takano, K., Ora, H., Ide, M., & Kansaku, K. (2016). The Rubber Tail Il
 ---
 
 ## General Information Regarding Data Collection
-- Experiment 1 (grasping: real tail/fake tail): 525 trials of 720 total possible trials
-- Experiment 2 (stroking: synchronous/asynchronous): 558 trials of 720 total possible trials
-- Both experiments: 1,083 trials of 1,440 total possible trials
+- Experiment 1 (grasping: real tail/fake tail): Collected 525 trials of 720 total possible trials
+- Experiment 2 (stroking: synchronous/asynchronous): Collected 558 trials of 720 total possible trials
+- Both experiments: Collected 1,083 trials of 1,440 total possible trials
 
-- 246 recorded videos of 288 total possible videos amounting to 24.32 GB
-  - 63 asynchronous videos of 72 total possible videos (6.06 GB)
-  - 62 synchronous videos of 72 total possible videos (6.31 GB)
-  - 58 real tail videos of 72 total possible videos (5.42 GB)
-  - 63 fake tail videos of 72 total possible videos (6.53 GB)
+- Collected 246 recorded videos of 288 total possible videos amounting to 24.32 GB
+  - Collected 63 asynchronous videos of 72 total possible videos (6.06 GB)
+  - Collected 62 synchronous videos of 72 total possible videos (6.31 GB)
+  - Collected 58 real tail videos of 72 total possible videos (5.42 GB)
+  - Collected 63 fake tail videos of 72 total possible videos (6.53 GB)
