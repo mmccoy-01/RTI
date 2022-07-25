@@ -31,4 +31,4 @@ Wada, M., Takano, K., Ora, H., Ide, M., & Kansaku, K. (2016). The Rubber Tail Il
   - Collected 58 real tail videos of 72 total possible videos (5.42 GB)
   - Collected 63 fake tail videos of 72 total possible videos (6.53 GB)
 
-![[rti.4.21.2022.poster.pdf]]
+![[graphics/rti.4.21.2022.poster.pdf]]
