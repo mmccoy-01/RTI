@@ -1,37 +1,241 @@
 #load packages and cleaned data sets for analysis----
 library(tidyverse)
+library(hms)
 library(ggstatsplot)
 library(ggpubr)
-library(jmv)
-library(psych)
 library(EnvStats)
 library(Hmisc)
-rti.wide.data <- read_csv("data/rti-widedata-cleaned.csv")
-rti.long.data <- read_csv("data/rti-longdata-cleaned.csv")
 
-# For getting clean wide data run below---------------------------
+# Exclusion criteria----
+#There was removal of 4 rats from the entirety of the experiments
+#(XXXXX ) because these subjects did not meet the minimum inclusion
+#criteria for 2/3 of the experiments (control, grasping, stroking)
+#The conclusion of each section has two outputs:
+#1. All rat data with no exclusions
+#2. Rat data indicating aforementioned exclusions
 
-#load data into a data frame
-rti <- read_csv("data/rti-longdata-uncleaned.csv")
+## Control Inclusion Criteria:
+#From restraint habituation days 3-4: At least 1/2 trials or more
+
+## Grasping Inclusion Criteria:
+#From experiment days 3-6: At least 10/20 trials or more
+
+## Stroking Inclusion Criteria:
+#From experiment days 3-6: At least 10/20 trials or more
+
+# For getting clean control data run below----
+#this is control data from days 3 and 4 of restraint habituation where rats
+#were not stroked, grasped, or had tail taped down. During the experiment,
+#ideally, rats had to face forward in the restrainer for at least 3 total
+#minutes. This did not have to be consecutive. A perfect day for a rat
+#would consist of a rat having 6 completed 30 second trials.
+
+## Loading raw control data
+rti.control.data.uncleaned <- read_csv("data/rti/rti-experiment-control-uncleaned.csv")
+
+## Creating new column for time the trial began AFTER video started recording
+#(i.e. row trial.recording.start)
+#changes global options so we get 3 digits for the milliseconds
+options(digits.secs = 3)
+#changing the data frame columns from character into POSIXct
+rti.control.data.uncleaned$trial.recording.start <-
+  as.POSIXct(rti.control.data.uncleaned$trial.recording.start,
+             tz = "EST",
+             format = "%m/%d/%Y %H:%M:%OS"
+             )
+rti.control.data.uncleaned$video.recording.start <-
+  as.POSIXct(rti.control.data.uncleaned$video.recording.start,
+             tz = "EST",
+             format = "%m/%d/%Y %H:%M:%OS"
+             )
+
+#confirm that the columns are now POSIXct
+sapply(rti.control.data.uncleaned, class)
+
+## Creating a new column with the trial time since start time of actual video recording
+#(i.e trial.recording.start minus video.recording.start)
+#as_hms changes the numeric output of difftime to %H:%M:%SO
+rti.control.data.uncleaned <-
+  rti.control.data.uncleaned %>%
+  mutate(time.since.video.start =
+           as_hms(difftime(trial.recording.start, video.recording.start,
+                           units = "secs")
+                  )
+         )
+
+## Getting rid of the + at the beginning of column trial.recording.duration
+rti.control.data.uncleaned$trial.recording.duration <-
+  str_sub(rti.control.data.uncleaned$trial.recording.duration,-12,-1)
+#as_hms changes the numeric output of trial.recording.duration to %H:%M:%SO
+rti.control.data.uncleaned$trial.recording.duration <-
+  as_hms(rti.control.data.uncleaned$trial.recording.duration)
+
+## Mutating new subject column from file.name column
+rti.control.data.uncleaned$subject <-
+  str_sub(rti.control.data.uncleaned$file.name,-6,-5)
+
+## Arranging the order of columns and arranging by video.recording.start
+rti.control.data.uncleaned <-
+  select(rti.control.data.uncleaned,
+         subject,
+         sex,
+         day,
+         video.recording.start,
+         trial.recording.start,
+         trial.recording.duration,
+         time.since.video.start,
+         elongation
+         ) %>%
+  arrange(video.recording.start)
+
+## Mutating new trial.completion column from trial.recording.duration column
+rti.control.data.uncleaned <-
+  rti.control.data.uncleaned %>%
+  mutate(trial.completion =
+           trial.recording.duration > 30)
+
+## 1. Save rti.control.long.data.cleaned output
+write_csv(rti.control.data.uncleaned, path = "data_output/rti/rti-control-data-cleaned.csv")
+
+## 2. Save rti.control.long.data.cleaned output WITH EXCLUDED RATS
+#only keep rows where subject is NOT 'j1' or 'k2' or 'l1' or 'l2'
+
+#rti-experiment-control-cleaned-representive.csv was manually created from
+#rti-control-data-cleaned.csv
+#Any part of the video must have a minute consecutively elapse without rat
+#turning around. Then, take the following 30 seconds of average elongation.
+rti.experiment.control.cleaned.representive <-
+  read_csv("data/rti/rti-experiment-control-cleaned-representive.csv")
+rti.experiment.control.cleaned.representive %>%
+  filter(subject!='j1' &
+           subject!='k2' &
+           subject!='l2'
+         ) %>% 
+  write_csv(path = "data_output/rti/rti-control-data-cleaned-representive-exclusions.csv")
+
+# For getting clean long data run below---------------------------
+## Load data into a data frame
+rti.long <- read_csv("data/rti/rti-longdata-uncleaned.csv")
 
 #view head of uncleaned long data
-head(rti)
+head(rti.long)
+
+#Get rid of subject id in trial column
+str_sub(rti.long$trial, -9, -7) <- ""
+
+## Adding column indicating testing order for first six days then next six days
+#AB = stroking (days 1-6) then grasping (days 7-12)
+#BA = grasping (days 1-6) then stroking (days 7-12)
+rti.long <- rti.long %>% 
+  mutate(testorder = case_when(
+    endsWith(subject, "a1") ~ "AB",
+    endsWith(subject, "a2") ~ "BA",
+    endsWith(subject, "b1") ~ "BA",
+    endsWith(subject, "b2") ~ "AB",
+    endsWith(subject, "c1") ~ "BA",
+    endsWith(subject, "c2") ~ "BA",
+    endsWith(subject, "d1") ~ "AB",
+    endsWith(subject, "d2") ~ "AB",
+    endsWith(subject, "e1") ~ "BA",
+    endsWith(subject, "e2") ~ "AB",
+    endsWith(subject, "f1") ~ "BA",
+    endsWith(subject, "f2") ~ "AB",
+    endsWith(subject, "g1") ~ "AB",
+    endsWith(subject, "g2") ~ "BA",
+    endsWith(subject, "h1") ~ "AB",
+    endsWith(subject, "h2") ~ "AB",
+    endsWith(subject, "i1") ~ "BA",
+    endsWith(subject, "i2") ~ "BA",
+    endsWith(subject, "j1") ~ "AB",
+    endsWith(subject, "j2") ~ "BA",
+    endsWith(subject, "k1") ~ "BA",
+    endsWith(subject, "k2") ~ "AB",
+    endsWith(subject, "l1") ~ "AB",
+    endsWith(subject, "l2") ~ "BA"
+    ))
+
+#Since we have a column indicating testing order, next up, I'm tightening up
+#the days so there isn't as much empty space in the data.
+#Changing days 7-12 to days 1-6 in trial column
+rti.long$trial <-
+  str_replace_all(rti.long$trial,
+                  c("day7" = "day1", "day8" = "day2", "day9" = "day3",
+                    "day10" = "day4", "day11" = "day5", "day12"= "day6"
+                    )
+                  )
+
+#Changing 7-12 to 1-6 in day column
+rti.long$day <-
+  str_replace_all(rti.long$day,
+                  c("7" = "1", "8" = "2", "9" = "3",
+                    "10" = "4", "11" = "5", "12"= "6"
+                    )
+                  )
+
+#get rid of condition and day information in trial column
+str_sub(rti.long$trial, 0, -2) <- ""
+
+#add experiment column specifying which conditions belong to which experiment
+rti.long <- rti.long %>% 
+  mutate(experiment = case_when(
+    endsWith(condition, "Synchronous") ~ "stroking",
+    endsWith(condition, "Asynchronous") ~ "stroking",
+    endsWith(condition, "Real Tail") ~ "grasping",
+    endsWith(condition, "Fake Tail") ~ "grasping"
+  ))
+
+#ordering columns for rti.long
+rti.long <- rti.long %>%
+  select(subject,
+         sex,
+         experiment,
+         condition,
+         testorder,
+         day,
+         trial,
+         elongation
+         )
+
+## 1. Save long data cleaned output
+write_csv(rti.long, path = "data_output/rti/rti-data-long-cleaned.csv")
+
+## 2. Save long data cleaned output WITH EXCLUDED RATS
+#only keep rows where subject is NOT 'j1' or 'k2' or 'l2'
+rti.long %>%
+  filter(day!='1' &
+           day!='2' &
+           subject!='j1' &
+           subject!='k2' &
+           subject!='l2') %>%
+  write_csv(path = "data_output/rti/rti-data-long-cleaned-exclusions.csv")
+
+
+# For getting clean wide data run below---------------------------
+## Load data into a data frame
+rti.wide <- read_csv("data/rti/rti-longdata-uncleaned.csv")
+
+#view head of cleaned long data
+head(rti.wide)
 
 #get rid of subject id in trial column
-str_sub(rti$trial, -9, -7) <- ""
+str_sub(rti.wide$trial, -9, -7) <- ""
 
 #changing days 7-12 to days 1-6 in trial column
-rti$trial <- str_replace_all(rti$trial, c("day7" = "day1", "day8" = "day2", "day9" = "day3",
-                             "day10" = "day4", "day11" = "day5", "day12"= "day6"))
+rti.wide$trial <-
+  str_replace_all(rti.wide$trial,
+                  c("day7" = "day1", "day8" = "day2", "day9" = "day3",
+                    "day10" = "day4", "day11" = "day5", "day12"= "day6"
+                    )
+                  )
 
 #changing 7-12 to 1-6 in day column
-rti$day <- str_replace_all(rti$day, c("7" = "1", "8" = "2", "9" = "3",
-                                          "10" = "4", "11" = "5", "12"= "6"))
+rti.wide$day <- str_replace_all(rti$day, c("7" = "1", "8" = "2", "9" = "3",
+                                      "10" = "4", "11" = "5", "12"= "6"))
 
 #adding a column indicating testing order for first six days then next six days
 #AB = stroking then grasping
 #BA = grasping then stroking
-rti <- rti %>% 
+rti.wide <- rti.wide %>% 
   mutate(testorder = case_when(
     endsWith(subject, "a1") ~ "AB",
     endsWith(subject, "a2") ~ "BA",
@@ -62,7 +266,7 @@ rti <- rti %>%
 #making two data frames that I will join later on
 #one data frame (rti) focuses on combining experimental conditions
 #another data frame (rti.condition.separate) keeps each condition column separate
-rti.condition.separate <- rti %>%
+rti.condition.separate <- rti.wide %>%
   select(subject, trial, elongation) %>% 
   pivot_wider(names_from = trial,
               values_from = elongation)
@@ -70,15 +274,15 @@ rti.condition.separate <- rti.condition.separate[order(rti.condition.separate$su
 
 #changing "synch" and "asynch" to "stroking"
 #and changing "fake" and "real" to "grasping"
-rti$trial <- str_replace_all(rti$trial,
-                                     c("asynch" = "stroking", "synch" = "stroking",
-                                        "real" = "grasping", "fake" = "grasping"))
+rti.wide$trial <- str_replace_all(rti.wide$trial,
+                             c("asynch" = "stroking", "synch" = "stroking",
+                               "real" = "grasping", "fake" = "grasping"))
 
 #remove day and condition column
-rti <- rti %>% select(subject, sex, testorder, trial, elongation, -day, -condition)
+rti.wide <- rti.wide %>% select(subject, sex, testorder, trial, elongation, -day, -condition)
 
 #change data from long to wide
-rti.wide <- rti %>%
+rti.wide <- rti.wide %>%
   pivot_wider(names_from = trial,
               values_from = elongation)
 
@@ -90,31 +294,31 @@ head(rti.wide)
 
 #add a column indicating stroking condition
 rti.wide <- mutate(rti.wide, stroking = case_when(
-    endsWith(subject, "a1") ~ "synchronous",
-    endsWith(subject, "a2") ~ "asynchronous",
-    endsWith(subject, "b1") ~ "synchronous",
-    endsWith(subject, "b2") ~ "synchronous",
-    endsWith(subject, "c1") ~ "synchronous",
-    endsWith(subject, "c2") ~ "asynchronous",
-    endsWith(subject, "d1") ~ "asynchronous",
-    endsWith(subject, "d2") ~ "asynchronous",
-    endsWith(subject, "e1") ~ "synchronous",
-    endsWith(subject, "e2") ~ "asynchronous",
-    endsWith(subject, "f1") ~ "asynchronous",
-    endsWith(subject, "f2") ~ "synchronous",
-    endsWith(subject, "g1") ~ "asynchronous",
-    endsWith(subject, "g2") ~ "asynchronous",
-    endsWith(subject, "h1") ~ "asynchronous",
-    endsWith(subject, "h2") ~ "synchronous",
-    endsWith(subject, "i1") ~ "synchronous",
-    endsWith(subject, "i2") ~ "synchronous",
-    endsWith(subject, "j1") ~ "asynchronous",
-    endsWith(subject, "j2") ~ "synchronous",
-    endsWith(subject, "k1") ~ "asynchronous",
-    endsWith(subject, "k2") ~ "synchronous",
-    endsWith(subject, "l1") ~ "synchronous",
-    endsWith(subject, "l2") ~ "asynchronous"
-  ))
+  endsWith(subject, "a1") ~ "synchronous",
+  endsWith(subject, "a2") ~ "asynchronous",
+  endsWith(subject, "b1") ~ "synchronous",
+  endsWith(subject, "b2") ~ "synchronous",
+  endsWith(subject, "c1") ~ "synchronous",
+  endsWith(subject, "c2") ~ "asynchronous",
+  endsWith(subject, "d1") ~ "asynchronous",
+  endsWith(subject, "d2") ~ "asynchronous",
+  endsWith(subject, "e1") ~ "synchronous",
+  endsWith(subject, "e2") ~ "asynchronous",
+  endsWith(subject, "f1") ~ "asynchronous",
+  endsWith(subject, "f2") ~ "synchronous",
+  endsWith(subject, "g1") ~ "asynchronous",
+  endsWith(subject, "g2") ~ "asynchronous",
+  endsWith(subject, "h1") ~ "asynchronous",
+  endsWith(subject, "h2") ~ "synchronous",
+  endsWith(subject, "i1") ~ "synchronous",
+  endsWith(subject, "i2") ~ "synchronous",
+  endsWith(subject, "j1") ~ "asynchronous",
+  endsWith(subject, "j2") ~ "synchronous",
+  endsWith(subject, "k1") ~ "asynchronous",
+  endsWith(subject, "k2") ~ "synchronous",
+  endsWith(subject, "l1") ~ "synchronous",
+  endsWith(subject, "l2") ~ "asynchronous"
+))
 
 #add a column indicating grasping condition
 rti.wide <- mutate(rti.wide, grasping = case_when(
@@ -148,32 +352,21 @@ rti.wide <- mutate(rti.wide, grasping = case_when(
 rti.wide <- rti.wide %>% relocate(stroking, .after = testorder)
 rti.wide <- rti.wide %>% relocate(grasping, .after = stroking)
 
-#load rti-weight.csv into a data frame
-rti.weight <- read_csv("data/rti-weight.csv")
+## Load rti-mass.csv into a data frame
+#mass is in grams
+rti.mass <- read_csv("data/rti/rti-mass.csv")
 
-#add weight columns to cleaned wide data
-rti.wide <- rti.wide %>% inner_join(rti.weight)
+#add mass columns to cleaned wide data
+rti.wide <- rti.wide %>% inner_join(rti.mass)
 
-#move new weight columns to after test order column
-rti.wide <- rti.wide %>% relocate("3.7.2022.WEIGHT", .after = testorder)
-rti.wide <- rti.wide %>% relocate("3.9.2022.WEIGHT", .after = "3.7.2022.WEIGHT")
-rti.wide <- rti.wide %>% relocate("3.14.2022.WEIGHT", .after = "3.9.2022.WEIGHT")
-rti.wide <- rti.wide %>% relocate("3.16.2022.WEIGHT", .after = "3.14.2022.WEIGHT")
-rti.wide <- rti.wide %>% relocate("3.21.2022.WEIGHT", .after = "3.16.2022.WEIGHT")
-rti.wide <- rti.wide %>% relocate("3.23.2022.WEIGHT", .after = "3.21.2022.WEIGHT")
-rti.wide <- rti.wide %>% relocate("3.25.2022.WEIGHT", .after = "3.23.2022.WEIGHT")
-
-#load rti-experiment-control.csv into a data frame
-rti.control <- read_csv("data/rti-experiment-control.csv")
-
-#add control columns to cleaned wide data
-rti.wide <- rti.wide %>% inner_join(rti.control)
-
-#move new control column to after 3.25.2022.WEIGHT column
-rti.wide <- rti.wide %>% relocate("control.elongation", .after = "3.25.2022.WEIGHT")
-
-#see cleaned wide data
-head(rti.wide)
+#move new mass columns to after testorder column
+rti.wide <- rti.wide %>% relocate("3.7.2022.MASS", .after = testorder)
+rti.wide <- rti.wide %>% relocate("3.9.2022.MASS", .after = "3.7.2022.MASS")
+rti.wide <- rti.wide %>% relocate("3.14.2022.MASS", .after = "3.9.2022.MASS")
+rti.wide <- rti.wide %>% relocate("3.16.2022.MASS", .after = "3.14.2022.MASS")
+rti.wide <- rti.wide %>% relocate("3.21.2022.MASS", .after = "3.16.2022.MASS")
+rti.wide <- rti.wide %>% relocate("3.23.2022.MASS", .after = "3.21.2022.MASS")
+rti.wide <- rti.wide %>% relocate("3.25.2022.MASS", .after = "3.23.2022.MASS")
 
 #mutate 6 new columns (avg elongation for each day of stroking)
 stroking.day1 <- rti.wide %>%
@@ -199,7 +392,7 @@ rti.wide <- mutate(rti.wide, stroking.day5.avg = rowMeans(stroking.day5, na.rm =
 stroking.day6 <- rti.wide %>%
   select(stroking.day6.trial1, stroking.day6.trial2, stroking.day6.trial3, stroking.day6.trial4, stroking.day6.trial5) 
 rti.wide <- mutate(rti.wide, stroking.day6.avg = rowMeans(stroking.day6, na.rm = TRUE))
-  
+
 #mutate 6 new columns (avg elongation for each day of grasping)
 grasping.day1 <- rti.wide %>%
   select(grasping.day1.trial1, grasping.day1.trial2, grasping.day1.trial3, grasping.day1.trial4, grasping.day1.trial5) 
@@ -236,14 +429,14 @@ grasping.total <- rti.wide %>%
 rti.wide <- mutate(rti.wide, grasping.total.avg = rowMeans(grasping.total, na.rm = TRUE))
 
 #Creating 28 new columns:
-  #average synchronous stroking per day (6 columns)
-  #average asynchronous stroking per day (6 columns)
-  #average real tail grasping per day (6 columns)
-  #average fake tail grasping per day (6 columns)
-  #average synchronous stroking overall (1 column)
-  #average asynchronous stroking overall (1 column)
-  #average real tail grasping overall (1 column)
-  #average fake tail grasping overall (1 column)
+#average synchronous stroking per day (6 columns)
+#average asynchronous stroking per day (6 columns)
+#average real tail grasping per day (6 columns)
+#average fake tail grasping per day (6 columns)
+#average synchronous stroking overall (1 column)
+#average asynchronous stroking overall (1 column)
+#average real tail grasping overall (1 column)
+#average fake tail grasping overall (1 column)
 
 #mutate 6 new columns (avg elongation for each day of synchronous stroking)
 synch.day1 <- rti.condition.separate %>%
@@ -366,159 +559,41 @@ real.total <- rti.wide %>%
   select(real.day1.avg, real.day2.avg, real.day3.avg, real.day4.avg, real.day5.avg, real.day6.avg) 
 rti.wide <- mutate(rti.wide, real.total.avg = rowMeans(real.total, na.rm = TRUE))
 
-#save wide data cleaned output
-write_csv(rti.wide, path = "data/rti-widedata-cleaned.csv")
+## 1. Save wide data cleaned output
+write_csv(rti.wide, path = "data_output/rti/rti-data-wide-cleaned.csv")
 
-# For getting clean long data run below---------------------------
-
-#load data into a data frame
-rti.long <- read_csv("data/rti-longdata-uncleaned.csv")
-
-#view head of uncleaned long data
-head(rti.long)
-
-#get rid of subject id in trial column
-str_sub(rti.long$trial, -9, -7) <- ""
-
-#changing days 7-12 to days 1-6 in trial column
-rti.long$trial <- str_replace_all(rti.long$trial, c("day7" = "day1", "day8" = "day2", "day9" = "day3",
-                                          "day10" = "day4", "day11" = "day5", "day12"= "day6"))
-
-#changing 7-12 to 1-6 in day column
-rti.long$day <- str_replace_all(rti.long$day, c("7" = "1", "8" = "2", "9" = "3",
-                                      "10" = "4", "11" = "5", "12"= "6"))
-
-#adding a column indicating testing order for first six days then next six days
-#AB = stroking then grasping
-#BA = grasping then stroking
-rti.long <- rti.long %>% 
-  mutate(testorder = case_when(
-    endsWith(subject, "a1") ~ "AB",
-    endsWith(subject, "a2") ~ "BA",
-    endsWith(subject, "b1") ~ "BA",
-    endsWith(subject, "b2") ~ "AB",
-    endsWith(subject, "c1") ~ "BA",
-    endsWith(subject, "c2") ~ "BA",
-    endsWith(subject, "d1") ~ "AB",
-    endsWith(subject, "d2") ~ "AB",
-    endsWith(subject, "e1") ~ "BA",
-    endsWith(subject, "e2") ~ "AB",
-    endsWith(subject, "f1") ~ "BA",
-    endsWith(subject, "f2") ~ "AB",
-    endsWith(subject, "g1") ~ "AB",
-    endsWith(subject, "g2") ~ "BA",
-    endsWith(subject, "h1") ~ "AB",
-    endsWith(subject, "h2") ~ "AB",
-    endsWith(subject, "i1") ~ "BA",
-    endsWith(subject, "i2") ~ "BA",
-    endsWith(subject, "j1") ~ "AB",
-    endsWith(subject, "j2") ~ "BA",
-    endsWith(subject, "k1") ~ "BA",
-    endsWith(subject, "k2") ~ "AB",
-    endsWith(subject, "l1") ~ "AB",
-    endsWith(subject, "l2") ~ "BA"
-  ))
-
-#get rid of condition and day information in trial column
-str_sub(rti.long$trial, 0, -2) <- ""
-
-#ordering columns for rti.long
-rti.long <- rti.long %>% select(subject, sex, condition, testorder, day, trial, elongation)
-
-#load rti-experiment-control.csv into a data frame
-rti.control.long <- read_csv("data/rti-experiment-control.csv")
-
-#rename control.elongation to elongation
-rti.control.long <- rti.control.long %>% rename(elongation = control.elongation)
-
-#add the necessary columns and information for this to be added
-rti.control.long <- rti.control.long %>% 
-  mutate(condition = "control")
-
-rti.control.long <- rti.control.long %>% 
-  mutate(sex = case_when(
-    endsWith(subject, "a1") ~ "Female",
-    endsWith(subject, "a2") ~ "Female",
-    endsWith(subject, "b1") ~ "Female",
-    endsWith(subject, "b2") ~ "Female",
-    endsWith(subject, "c1") ~ "Female",
-    endsWith(subject, "c2") ~ "Female",
-    endsWith(subject, "d1") ~ "Female",
-    endsWith(subject, "d2") ~ "Female",
-    endsWith(subject, "e1") ~ "Female",
-    endsWith(subject, "e2") ~ "Female",
-    endsWith(subject, "f1") ~ "Female",
-    endsWith(subject, "f2") ~ "Female",
-    endsWith(subject, "g1") ~ "Male",
-    endsWith(subject, "g2") ~ "Male",
-    endsWith(subject, "h1") ~ "Male",
-    endsWith(subject, "h2") ~ "Male",
-    endsWith(subject, "i1") ~ "Male",
-    endsWith(subject, "i2") ~ "Male",
-    endsWith(subject, "j1") ~ "Male",
-    endsWith(subject, "j2") ~ "Male",
-    endsWith(subject, "k1") ~ "Male",
-    endsWith(subject, "k2") ~ "Male",
-    endsWith(subject, "l1") ~ "Male",
-    endsWith(subject, "l2") ~ "Male"
-  ))
-
-rti.control.long <- rti.control.long %>% 
-  mutate(testorder = "NA", day = "NA", trial = "NA")
-
-#ordering columns for rti.control.long
-rti.control.long <- rti.control.long %>% select(subject, sex, condition, testorder, day, trial, elongation)
-
-#add rti.control.long onto the bottom of rti.long
-rti.long <- rbind(rti.control.long, rti.long)
-
-#add experiment column specifying with conditions belong to which experiment
-rti.long <- rti.long %>% 
-  mutate(experiment = case_when(
-    endsWith(condition, "control") ~ "control",
-    endsWith(condition, "Synchronous") ~ "stroking",
-    endsWith(condition, "Asynchronous") ~ "stroking",
-    endsWith(condition, "Real Tail") ~ "grasping",
-    endsWith(condition, "Fake Tail") ~ "grasping"
-  ))
-
-#put experiment column before condition column
-rti.long <- rti.long %>% relocate(experiment, .after = sex)
-
-#save long data cleaned output
-write_csv(rti.long, path = "data/rti-longdata-cleaned.csv")
-
-# For summary statistics run below----
-describeBy(rti.long.data, rti.long.data$condition)
+## 2. Save wide data cleaned output WITH EXCLUDED RATS
+#only keep rows where subject is NOT 'j1' or 'k2' or 'l1' or 'l2'
+rti.wide %>%
+  filter(day!='1' &
+           day!='2' &
+           subject!='j1' &
+           subject!='k2' &
+           subject!='l2') %>%
+  write_csv(path = "data_output/rti/rti-data-wide-cleaned.exclusions.csv")
 
 # For getting visualizations run below----
-#removing a single extreme outlier from synchronous condition
-rti.long.data <- rti.long.data[-326,]
+## Mutating the names of experiments so that they are capitalized
+#I'm doing this because of facet grid strip.text.x in ggplot
+rti.data.long.cleaned <- read_csv("data_output/rti/rti-data-long-cleaned.csv")
 
-#mutating the names of experiments so that they are capitalized
-# i'm doing this because of facet grid strip.text.x in ggplot
-rti.long.data <- mutate_if(rti.long.data, 
-                           is.character, 
-                           str_replace_all, 
-                           pattern = "control", 
-                           replacement = "Control")
-rti.long.data <- mutate_if(rti.long.data, 
+rti.data.long.cleaned <- mutate_if(rti.data.long.cleaned, 
             is.character,
             str_replace_all,
             pattern = "grasping",
             replacement = "Grasping")
-rti.long.data <- mutate_if(rti.long.data, 
+rti.data.long.cleaned <- mutate_if(rti.data.long.cleaned, 
             is.character,
             str_replace_all,
             pattern = "stroking",
             replacement = "Stroking")
 
-# ggplot code
-# ggplot colors
+## ggplot code where each point is a trial
+#ggplot colors
 #black hex: #0D0D0D
 #grey hex: #7F7F7F
 #scarlet hex: #9C1F2E
-rti.total <- ggplot(rti.long.data, aes(x = condition, y = elongation)) +
+rti.plot.point.per.trial <- ggplot(rti.data.long.cleaned, aes(x = condition, y = elongation)) +
   geom_point(aes(fill = sex, color = sex), shape = 20,
              alpha = 0.3,
              position = position_jitterdodge()) +
@@ -557,8 +632,170 @@ rti.total <- ggplot(rti.long.data, aes(x = condition, y = elongation)) +
               y_position = 83, tip_length = 0.02, vjust = 0.4,
               map_signif_level = TRUE, textsize = 9, family="arial")
 
-# For getting repeated measures ANOVA by day analyses run below----
-## stroking by day
+## ggplot code where each point is one rat
+# ggplot colors
+#black hex: #0D0D0D
+#grey hex: #7F7F7F
+#scarlet hex: #9C1F2E
+#I have to make a new rti.long.data.per.experiment so that has each rat has one
+#data point per experiment
+rti.wide <- read_csv("data_output/rti/rti-data-wide-cleaned.csv")
+
+rti.total.per.experiment.wide <- rti.wide %>% 
+  select(subject,
+         sex,
+         testorder,
+         stroking,
+         grasping,
+         asynch.total.avg,
+         synch.total.avg,
+         fake.total.avg,
+         real.total.avg
+         )
+
+#create a long format table of rti.total.per.experiment that groups by condition
+rti.total.per.experiment.long <- pivot_longer(rti.total.per.experiment.wide,
+                                              cols = "asynch.total.avg":"real.total.avg",
+                                              names_to = "condition",
+                                values_to = "elongation", values_drop_na = TRUE)
+
+#to retain the facet grid, I added another column that indicates experiment
+rti.total.per.experiment.long <- rti.total.per.experiment.long %>% 
+  mutate(experiment = case_when(
+  endsWith(condition, "asynch.total.avg") ~ "Stroking",
+  endsWith(condition, "synch.total.avg") ~ "Stroking",
+  endsWith(condition, "fake.total.avg") ~ "Grasping",
+  endsWith(condition, "real.total.avg") ~ "Grasping"
+  ))
+
+#changing names (e.g. synch.total.avg to Synchronous) in condition column
+rti.total.per.experiment.long$condition <- str_replace_all(
+  rti.total.per.experiment.long$condition, c(
+    "asynch.total.avg" = "Asynchronous",
+    "synch.total.avg" = "Synchronous",
+    "fake.total.avg" = "Fake Tail",
+    "real.total.avg" = "Real Tail"
+    ))
+
+rti.plot.point.per.rat <- ggplot(rti.total.per.experiment.long, aes(x = condition, y = elongation)) +
+  geom_point(aes(fill = sex, color = sex), shape = 20, size = 3,
+             alpha = 0.3,
+             position = position_jitterdodge()) +
+  geom_violin(alpha = 0) +
+  facet_grid(~experiment,
+             scales = "free", space = "free") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 4, color="#9C1F2E", fill="#9C1F2E") +
+  stat_summary(fun.data = mean_cl_normal,  
+               geom = "errorbar", width = 0.5, color = "#9C1F2E") +
+  theme_bw(base_size = 10) +
+  theme(text = element_text(family="arial"),
+        axis.text.x = element_text(face="bold", 
+                                   size=11),
+        axis.text.y = element_text(face="bold", 
+                                   size=11),
+        panel.spacing = unit(.05, "lines"),
+        panel.border = element_rect(color = "#0D0D0D", fill = NA, size = .05),
+        strip.text = element_text(face = "bold", size = 25, colour = "#9C1F2E"),
+        strip.text.x = element_text(size = 15),
+        strip.background = element_rect(fill = "white"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position = "bottom",
+        legend.text = element_text(face = "bold", size = 11),
+        legend.title = element_blank(),
+        plot.title = element_text(lineheight = 0.9),
+        axis.title.y = element_text(face = "bold", margin = margin(r = 15))) +
+  guides(colour = guide_legend(override.aes = list(size=10))) +
+  stat_n_text() + 
+  labs(x = "Condition", y = "Body Elongation (%)") +
+  scale_y_continuous(breaks = seq(50,95,5)) +
+  stat_mean_sd_text(vjust = 0.7)
+
+
+## Testing Order: rti.total.per.experiment split by testing order
+split.testorder <- group_split(rti.total.per.experiment.long, rti.total.per.experiment.long$testorder)
+
+### AB test order (stroking then grasping)
+ggplot(split.testorder[[1]], aes(x = condition, y = elongation)) +
+  geom_point(aes(fill = sex, color = sex), shape = 20, size = 3,
+             alpha = 0.3,
+             position = position_jitterdodge()) +
+  geom_violin(alpha = 0) +
+  facet_grid(~experiment,
+             scales = "free", space = "free") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 4, color="#9C1F2E", fill="#9C1F2E") +
+  stat_summary(fun.data = mean_cl_normal,  
+               geom = "errorbar", width = 0.5, color = "#9C1F2E") +
+  theme_bw(base_size = 10) +
+  theme(text = element_text(family="arial"),
+        axis.text.x = element_text(face="bold", 
+                                   size=11),
+        axis.text.y = element_text(face="bold", 
+                                   size=11),
+        panel.spacing = unit(.05, "lines"),
+        panel.border = element_rect(color = "#0D0D0D", fill = NA, size = .05),
+        strip.text = element_text(face = "bold", size = 25, colour = "#9C1F2E"),
+        strip.text.x = element_text(size = 15),
+        strip.background = element_rect(fill = "white"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position = "bottom",
+        legend.text = element_text(face = "bold", size = 11),
+        legend.title = element_blank(),
+        plot.title = element_text(lineheight = 0.9),
+        axis.title.y = element_text(face = "bold", margin = margin(r = 15))) +
+  guides(colour = guide_legend(override.aes = list(size=10))) +
+  stat_n_text() + 
+  labs(x = "Condition", y = "Body Elongation (%)") +
+  scale_y_continuous(breaks = seq(50,95,5)) +
+  stat_mean_sd_text(vjust = 0.7)
+
+### BA test order (grasping then stroking)
+ggplot(split.testorder[[2]], aes(x = condition, y = elongation)) +
+  geom_point(aes(fill = sex, color = sex), shape = 20, size = 3,
+             alpha = 0.3,
+             position = position_jitterdodge()) +
+  geom_violin(alpha = 0) +
+  facet_grid(~experiment,
+             scales = "free", space = "free") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 4, color="#9C1F2E", fill="#9C1F2E") +
+  stat_summary(fun.data = mean_cl_normal,  
+               geom = "errorbar", width = 0.5, color = "#9C1F2E") +
+  theme_bw(base_size = 10) +
+  theme(text = element_text(family="arial"),
+        axis.text.x = element_text(face="bold", 
+                                   size=11),
+        axis.text.y = element_text(face="bold", 
+                                   size=11),
+        panel.spacing = unit(.05, "lines"),
+        panel.border = element_rect(color = "#0D0D0D", fill = NA, size = .05),
+        strip.text = element_text(face = "bold", size = 25, colour = "#9C1F2E"),
+        strip.text.x = element_text(size = 15),
+        strip.background = element_rect(fill = "white"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position = "bottom",
+        legend.text = element_text(face = "bold", size = 11),
+        legend.title = element_blank(),
+        plot.title = element_text(lineheight = 0.9),
+        axis.title.y = element_text(face = "bold", margin = margin(r = 15))) +
+  guides(colour = guide_legend(override.aes = list(size=10))) +
+  stat_n_text() + 
+  labs(x = "Condition", y = "Body Elongation (%)") +
+  scale_y_continuous(breaks = seq(50,95,5)) +
+  stat_mean_sd_text(vjust = 0.7)
+
+# For getting statistical analyses run below----
+library(jmv)
+rti.wide.data <- read_csv("data/rti/rti-data-wide-cleaned.csv")
+rti.long.data <- read_csv("data/rti/rti-data-long-cleaned.csv")
+## stroking by day repeated measures ANOVA
 stroking.results <- anovaRM(
   data = rti.wide.data,
   rm = list(
@@ -598,7 +835,7 @@ stroking.results <- anovaRM(
 #save stroking results as a .txt file
 capture.output(stroking.results, file = "stroking.results.txt", append = TRUE)
 
-## grasping by day
+## grasping by day repeated measures ANOVA
 grasping.results <- anovaRM(
   data = rti.wide.data,
   rm = list(
@@ -635,7 +872,7 @@ grasping.results <- anovaRM(
 #save grasping results as a .txt file
 capture.output(grasping.results, file = "grasping.results.txt", append = TRUE)
 
-# for getting control by sex independent samples t-test run below----
+## For getting control by sex independent samples t-test run below
 rti.experiment.control.sex <- read_csv("data/rti-experiment-control-sex.csv")
 control.by.sex.results <- ttestIS(
   formula = control.elongation ~ sex,
@@ -651,3 +888,10 @@ control.by.sex.results <- ttestIS(
 
 #save control by sex results as a .txt file
 capture.output(control.by.sex.results, file = "control.by.sex.results.txt", append = TRUE)
+
+## For getting lmer----
+library(lme4)
+
+summary(lmer(elongation~experiment*sex+(1|subject) + (1|day),
+             data=filter(rti.long.data, condition != "control")))
+
