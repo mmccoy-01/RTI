@@ -199,8 +199,9 @@ rti.long <- rti.long %>%
 ## 1. Save long data cleaned output
 write_csv(rti.long, path = "data_output/rti/rti-data-long-cleaned.csv")
 
-## 2. Save long data cleaned output WITH EXCLUDED RATS
-#only keep rows where subject is NOT 'j1' or 'k2' or 'l2'
+## 2. Save long data cleaned output WITH EXCLUSIONS
+#only keep rows where day is NOT 1 and 2 and
+#where subject is NOT 'j1' or 'k2' or 'l2'
 rti.long %>%
   filter(day!='1' &
            day!='2' &
@@ -562,15 +563,17 @@ rti.wide <- mutate(rti.wide, real.total.avg = rowMeans(real.total, na.rm = TRUE)
 ## 1. Save wide data cleaned output
 write_csv(rti.wide, path = "data_output/rti/rti-data-wide-cleaned.csv")
 
-## 2. Save wide data cleaned output WITH EXCLUDED RATS
-#only keep rows where subject is NOT 'j1' or 'k2' or 'l1' or 'l2'
+## 2. Save wide data cleaned output WITH EXCLUSIONS
+#only keep columns where day is NOT 1 and 2 and
+#where subject is NOT 'j1' or 'k2' or 'l2'
 rti.wide %>%
-  filter(day!='1' &
-           day!='2' &
-           subject!='j1' &
+  filter(subject!='j1' &
            subject!='k2' &
            subject!='l2') %>%
-  write_csv(path = "data_output/rti/rti-data-wide-cleaned.exclusions.csv")
+  select(-contains('day1'),
+         -contains('day2')
+         ) %>% 
+  write_csv(path = "data_output/rti/rti-data-wide-cleaned-exclusions.csv")
 
 # For getting visualizations run below----
 ## Mutating the names of experiments so that they are capitalized
@@ -793,34 +796,29 @@ ggplot(split.testorder[[2]], aes(x = condition, y = elongation)) +
 
 # For getting statistical analyses run below----
 library(jmv)
-rti.wide.data <- read_csv("data/rti/rti-data-wide-cleaned.csv")
-rti.long.data <- read_csv("data/rti/rti-data-long-cleaned.csv")
-## stroking by day repeated measures ANOVA
+rti.wide.data.exclusions <- read_csv("data_output/rti/rti-data-wide-cleaned-exclusions.csv")
+rti.long.data.exclusions <- read_csv("data_output/rti/rti-data-long-cleaned-exclusions.csv")
+
+## Stroking by day repeated measures ANOVA
 stroking.results <- anovaRM(
-  data = rti.wide.data,
+  data = rti.wide.data.exclusions,
   rm = list(
     list(
       label="Day",
-      levels=c("1", "2", "3", "4", "5", "6"))),
+      levels=c("1", "2", "3", "4"))),
   rmCells = list(
     list(
-      measure="stroking.day1.avg",
+      measure="stroking.day3.avg",
       cell="1"),
     list(
-      measure="stroking.day2.avg",
+      measure="stroking.day4.avg",
       cell="2"),
     list(
-      measure="stroking.day3.avg",
+      measure="stroking.day5.avg",
       cell="3"),
     list(
-      measure="stroking.day4.avg",
-      cell="4"),
-    list(
-      measure="stroking.day5.avg",
-      cell="5"),
-    list(
       measure="stroking.day6.avg",
-      cell="6")),
+      cell="4")),
   bs = stroking,
   rmTerms = ~ Day,
   bsTerms = ~ stroking,
@@ -832,23 +830,17 @@ stroking.results <- anovaRM(
     "stroking"),
   groupSumm = TRUE)
 
-#save stroking results as a .txt file
+### save stroking results as a .txt file
 capture.output(stroking.results, file = "stroking.results.txt", append = TRUE)
 
-## grasping by day repeated measures ANOVA
+## Grasping by day repeated measures ANOVA
 grasping.results <- anovaRM(
-  data = rti.wide.data,
+  data = rti.wide.data.exclusions,
   rm = list(
     list(
       label="Day",
-      levels=c("1", "2", "3", "4", "5", "6"))),
+      levels=c("1", "2", "3", "4"))),
   rmCells = list(
-    list(
-      measure="grasping.day1.avg",
-      cell="1"),
-    list(
-      measure="grasping.day2.avg",
-      cell="2"),
     list(
       measure="grasping.day3.avg",
       cell="3"),
@@ -869,29 +861,11 @@ grasping.results <- anovaRM(
   leveneTest = TRUE,
   groupSumm = TRUE)
 
-#save grasping results as a .txt file
+### save grasping results as a .txt file
 capture.output(grasping.results, file = "grasping.results.txt", append = TRUE)
-
-## For getting control by sex independent samples t-test run below
-rti.experiment.control.sex <- read_csv("data/rti-experiment-control-sex.csv")
-control.by.sex.results <- ttestIS(
-  formula = control.elongation ~ sex,
-  data = rti.experiment.control.sex,
-  vars = control.elongation,
-  norm = TRUE,
-  eqv = TRUE,
-  meanDiff = TRUE,
-  ci = TRUE,
-  effectSize = TRUE,
-  ciES = TRUE,
-  desc = TRUE)
-
-#save control by sex results as a .txt file
-capture.output(control.by.sex.results, file = "control.by.sex.results.txt", append = TRUE)
 
 ## For getting lmer----
 library(lme4)
 
 summary(lmer(elongation~experiment*sex+(1|subject) + (1|day),
              data=filter(rti.long.data, condition != "control")))
-
