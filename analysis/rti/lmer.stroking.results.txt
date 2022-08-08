@@ -1,0 +1,30 @@
+Linear mixed model fit by REML ['lmerMod']
+Formula: elongation ~ testorder * sex + (1 | subject) + (1 | day)
+   Data: 
+filter(rti.data.long.cleaned.exclusions, experiment == "stroking")
+
+REML criterion at convergence: 1497.2
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3458 -0.5294  0.0839  0.6011  3.1868 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subject  (Intercept) 1.5545   1.2468  
+ day      (Intercept) 0.1996   0.4468  
+ Residual             4.5652   2.1366  
+Number of obs: 336, groups:  subject, 20; day, 4
+
+Fixed effects:
+                    Estimate Std. Error t value
+(Intercept)         75.01896    0.63754 117.669
+testorderBA          0.09791    0.80895   0.121
+sexMale             -5.39681    0.98059  -5.504
+testorderBA:sexMale  7.91924    1.27812   6.196
+
+Correlation of Fixed Effects:
+            (Intr) tstrBA sexMal
+testorderBA -0.691              
+sexMale     -0.570  0.449       
+tstrdrBA:sM  0.438 -0.633 -0.767
