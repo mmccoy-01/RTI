@@ -1,4 +1,4 @@
-#load packages and cleaned data sets for analysis----
+# Load packages----
 library(tidyverse)
 library(hms)
 library(ggstatsplot)
@@ -7,8 +7,9 @@ library(EnvStats)
 library(Hmisc)
 
 # Exclusion criteria----
-#There was removal of 4 rats from the entirety of the experiments
-#(XXXXX ) because these subjects did not meet the minimum inclusion
+#Days 1 and 2 were removed in the 'exclusion' csv files
+#T\Also, there was removal of 4 rats from the entirety of the 'exclusion' csv files
+#(d2, j1, k2, l2) because these subjects did not meet the minimum inclusion
 #criteria for 2/3 of the experiments (control, grasping, stroking)
 #The conclusion of each section has two outputs:
 #1. All rat data with no exclusions
@@ -104,10 +105,11 @@ write_csv(rti.control.data.uncleaned, path = "data_output/rti/rti-control-data-c
 #rti-control-data-cleaned.csv
 #Any part of the video must have a minute consecutively elapse without rat
 #turning around. Then, take the following 30 seconds of average elongation.
-rti.experiment.control.cleaned.representive <-
-  read_csv("data/rti/rti-experiment-control-cleaned-representive.csv")
-rti.experiment.control.cleaned.representive %>%
-  filter(subject!='j1' &
+rti.control.data.cleaned.representive <-
+  read_csv("data_output/rti/rti-control-data-cleaned-representive.csv")
+rti.control.data.cleaned.representive %>%
+  filter(subject!='d2' &
+           subject!='j1' &
            subject!='k2' &
            subject!='l2'
          ) %>% 
@@ -205,13 +207,14 @@ write_csv(rti.long, path = "data_output/rti/rti-data-long-cleaned.csv")
 rti.long %>%
   filter(day!='1' &
            day!='2' &
+           subject!='d2' &
            subject!='j1' &
            subject!='k2' &
            subject!='l2') %>%
   write_csv(path = "data_output/rti/rti-data-long-cleaned-exclusions.csv")
 
 
-# For getting clean wide data run below---------------------------
+# For getting clean wide data run below----
 ## Load data into a data frame
 rti.wide <- read_csv("data/rti/rti-longdata-uncleaned.csv")
 
@@ -567,13 +570,78 @@ write_csv(rti.wide, path = "data_output/rti/rti-data-wide-cleaned.csv")
 #only keep columns where day is NOT 1 and 2 and
 #where subject is NOT 'j1' or 'k2' or 'l2'
 rti.wide %>%
-  filter(subject!='j1' &
+  filter(subject!='d2' &
+           subject!='j1' &
            subject!='k2' &
            subject!='l2') %>%
   select(-contains('day1'),
          -contains('day2')
          ) %>% 
   write_csv(path = "data_output/rti/rti-data-wide-cleaned-exclusions.csv")
+
+# For getting box plots of cleaned exclusions subjects run below----
+## Mutating the names of experiments so that they are capitalized
+#I'm doing this because of facet grid strip.text.x in ggplot
+rti.data.long.cleaned.exclusions <- 
+  read_csv("data_output/rti/rti-data-long-cleaned-exclusions.csv")
+
+rti.data.long.cleaned.exclusions <- mutate_if(rti.data.long.cleaned.exclusions, 
+                                   is.character,
+                                   str_replace_all,
+                                   pattern = "grasping",
+                                   replacement = "Grasping")
+rti.data.long.cleaned.exclusions <- mutate_if(rti.data.long.cleaned.exclusions, 
+                                   is.character,
+                                   str_replace_all,
+                                   pattern = "stroking",
+                                   replacement = "Stroking")
+
+#convert day variable to character
+rti.data.long.cleaned.exclusions$day <- as.character(rti.data.long.cleaned.exclusions$day)
+
+rti.plot.point.per.trial.exclusions.cleaned <- ggplot(rti.data.long.cleaned.exclusions, aes(x = subject, y = elongation)) +
+  geom_violin(alpha = 0) +
+  geom_point(aes(color = day),
+             shape = 20,
+             size = 3,
+             alpha = 0.3,
+             position = position_jitterdodge(jitter.width=0)) +
+  facet_grid(~experiment + condition,
+             scales = "free", space = "free") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 4, color="#9C1F2E", fill="#9C1F2E") +
+  stat_summary(fun.data = mean_cl_normal,  
+               geom = "errorbar", width = 0.5, color = "#9C1F2E") +
+  theme_bw(base_size = 10) +
+  theme(text = element_text(family="arial"),
+        axis.text.x = element_text(face="bold", 
+                                   size=11),
+        axis.text.y = element_text(face="bold", 
+                                   size=11),
+        panel.spacing = unit(.05, "lines"),
+        panel.border = element_rect(color = "#0D0D0D", fill = NA, size = .05),
+        strip.text = element_text(face = "bold", size = 25, colour = "#9C1F2E"),
+        strip.text.x = element_text(size = 15),
+        strip.background = element_rect(fill = "white"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position = "bottom",
+        legend.text = element_text(face = "bold", size = 11),
+        legend.title = element_blank(),
+        plot.title = element_text(lineheight = 0.9),
+        axis.title.y = element_text(face = "bold", margin = margin(r = 15))) +
+  guides(colour = guide_legend(override.aes = list(size=10))) +
+  stat_n_text() + 
+  labs(x = "Condition", y = "Body Elongation (%)") +
+  scale_y_continuous(breaks = seq(55,95,5)) +
+  stat_mean_sd_text(vjust = 0.7)
+
+ggsave("rti.plot.point.per.trial.exclusions.cleaned.png",
+       plot = last_plot(),
+       width = 36.5,
+       height = 8.3,
+       path = "graph_output/rti")
 
 # For getting visualizations run below----
 ## Mutating the names of experiments so that they are capitalized
@@ -635,13 +703,15 @@ rti.plot.point.per.trial <- ggplot(rti.data.long.cleaned, aes(x = condition, y =
               y_position = 83, tip_length = 0.02, vjust = 0.4,
               map_signif_level = TRUE, textsize = 9, family="arial")
 
+---
+  
 ## ggplot code where each point is one rat
 # ggplot colors
 #black hex: #0D0D0D
 #grey hex: #7F7F7F
 #scarlet hex: #9C1F2E
 #I have to make a new rti.long.data.per.experiment so that has each rat has one
-#data point per experiment
+#data point per experiment. NOTE: NO DATA ARE EXCLUDED
 rti.wide <- read_csv("data_output/rti/rti-data-wide-cleaned.csv")
 
 rti.total.per.experiment.wide <- rti.wide %>% 
@@ -680,6 +750,7 @@ rti.total.per.experiment.long$condition <- str_replace_all(
     "real.total.avg" = "Real Tail"
     ))
 
+#ggplot point per rat
 rti.plot.point.per.rat <- ggplot(rti.total.per.experiment.long, aes(x = condition, y = elongation)) +
   geom_point(aes(fill = sex, color = sex), shape = 20, size = 3,
              alpha = 0.3,
@@ -797,7 +868,6 @@ ggplot(split.testorder[[2]], aes(x = condition, y = elongation)) +
 # For getting statistical analyses run below----
 library(jmv)
 rti.wide.data.exclusions <- read_csv("data_output/rti/rti-data-wide-cleaned-exclusions.csv")
-rti.long.data.exclusions <- read_csv("data_output/rti/rti-data-long-cleaned-exclusions.csv")
 
 ## Stroking by day repeated measures ANOVA
 stroking.results <- anovaRM(
@@ -831,7 +901,7 @@ stroking.results <- anovaRM(
   groupSumm = TRUE)
 
 ### save stroking results as a .txt file
-capture.output(stroking.results, file = "stroking.results.txt", append = TRUE)
+capture.output(stroking.results, file = "analysis/rti/stroking.results.txt", append = TRUE)
 
 ## Grasping by day repeated measures ANOVA
 grasping.results <- anovaRM(
@@ -862,10 +932,50 @@ grasping.results <- anovaRM(
   groupSumm = TRUE)
 
 ### save grasping results as a .txt file
-capture.output(grasping.results, file = "grasping.results.txt", append = TRUE)
+capture.output(grasping.results, file = "analysis/rti/grasping.results.txt", append = TRUE)
 
-## For getting lmer----
+## Control by sex independent samples T-test
+rti.control.data.cleaned.representive.exclusions <- read_csv("data_output/rti/rti-control-data-cleaned-representive-exclusions.csv")
+
+control.results <- ttestIS(
+  formula = elongation ~ sex,
+  data = rti.control.data.cleaned.representive.exclusions,
+  vars = elongation,
+  welchs = TRUE,
+  norm = TRUE,
+  eqv = TRUE,
+  meanDiff = TRUE,
+  ci = TRUE,
+  effectSize = TRUE,
+  desc = TRUE,
+  plots = TRUE)
+
+### save control results as a .txt file
+capture.output(control.results, file = "analysis/rti/control.results.txt", append = TRUE)
+
+## Multivariate linear mixed effects model
 library(lme4)
 
-summary(lmer(elongation~experiment*sex+(1|subject) + (1|day),
-             data=filter(rti.long.data, condition != "control")))
+rti.data.long.cleaned.exclusions <-
+  read_csv("data_output/rti/rti-data-long-cleaned-exclusions.csv")
+
+### Stroking multivariate linear mixed effects model
+lmer.stroking.results <- summary(lmer(elongation~testorder*sex + (1|subject) + (1|day),
+             data = filter(rti.data.long.cleaned.exclusions, experiment == 'stroking')))
+
+#### Save stroking lmer results as a .txt file
+capture.output(lmer.stroking.results, file = "analysis/rti/lmer.stroking.results.txt", append = TRUE)
+
+### Grasping multivariate linear mixed effects model
+lmer.grasping.results <- summary(lmer(elongation~testorder*sex + (1|subject) + (1|day),
+                             data = filter(rti.data.long.cleaned.exclusions, experiment == 'grasping')))
+
+#### Save grasping lmer results as a .txt file
+capture.output(lmer.grasping.results, file = "analysis/rti/lmer.grasping.results.txt", append = TRUE)
+
+### Control multivariate linear mixed effects model
+lmer.control.results <- summary(lmer(elongation~sex + (1|subject) + (1|day),
+                                      data = rti.control.data.cleaned.representive.exclusions))
+
+#### Save control lmer results as a .txt file
+capture.output(lmer.control.results, file = "analysis/rti/lmer.control.results.txt", append = TRUE)
