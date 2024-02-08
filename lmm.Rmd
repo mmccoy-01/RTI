@@ -1,0 +1,82 @@
+This code is an attempt at creating a linear mixed model of the data
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(lme4)
+library(Matrix)
+```
+
+```{r no exclusions}
+# CLEAN DATA WITH NO EXCLUSIONS
+data <- read_csv("data_output/rti/rti-data-long-cleaned.csv")
+
+data <- data %>%
+  mutate(
+    subject = as.factor(subject),
+    sex = as.factor(sex),
+    experiment = as.factor(experiment),
+    condition = as.factor(condition),
+    testorder = as.factor(testorder),
+    day = as.numeric(day),
+    trial = as.numeric(trial),
+    elongation = as.numeric(elongation)
+  )
+
+# subject * trial * day * condition * sex * testorder
+
+data$condition <- relevel(data$condition, ref = "Fake Tail")
+
+# Fit the mixed-effects model
+rti_model <- lmer(elongation ~ condition +
+                    (1 | subject),  # Random intercept for each rat
+                  data = data)
+
+# Hypothetical summary output
+summary(rti_model)
+```
+
+# With Exclusions
+
+```{r with exclusions}
+# CLEAN DATA WITH EXCLUSIONS
+
+control_data <- read_csv("data_output/rti/rti-control-data-cleaned-representive.csv")
+
+cleaned_data <- read_csv("data_output/rti/rti-data-long-cleaned-exclusions.csv")
+
+cleaned_data <- cleaned_data %>%
+  mutate(
+    subject = as.factor(subject),
+    sex = as.factor(sex),
+    experiment = as.factor(experiment),
+    condition = as.factor(condition),
+    testorder = as.factor(testorder),
+    day = as.numeric(day),
+    trial = as.numeric(trial),
+    elongation = as.numeric(elongation)
+  )
+
+# Assuming 'subject' is the common column between the two dataframes
+merged_data <- bind_rows(cleaned_data, control_data %>% select(subject, elongation))
+
+# Set levels for 'experiment' and 'condition'
+levels(merged_data$experiment) <- c(levels(merged_data$experiment), "habituation")
+levels(merged_data$condition) <- c(levels(merged_data$condition), "Control")
+
+# Set values for 'experiment' and 'condition'
+merged_data$experiment[is.na(merged_data$experiment)] <- "habituation"
+merged_data$condition[is.na(merged_data$condition)] <- "Control"
+
+# subject * trial * day * condition * sex * testorder
+
+merged_data$condition <- relevel(merged_data$condition, ref = "Control")
+
+
+rti_model_cleaned <- lmer(elongation ~ experiment + (1 | condition) +
+                            (1 | subject) + experiment:condition +
+                            experiment:condition,
+                          data = merged_data)
+
+# Hypothetical summary output
+summary(rti_model_cleaned)
+```
